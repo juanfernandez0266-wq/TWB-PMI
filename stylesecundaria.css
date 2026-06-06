@@ -29,7 +29,7 @@ body {
     font-weight: 700; 
     font-size: 28px; 
     color: var(--color-de-h2);
-    margin-bottom: 15px; 
+    margin-top: 60px;
 }
 .texto-seccion span { 
     display: block; 
