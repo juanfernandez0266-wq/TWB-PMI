@@ -1,3 +1,6 @@
+
+/* CONTROLES DE VALIDACION DE CONTACTO */ 
+
 function validar() {
     let formularioValido = true;
 
@@ -49,4 +52,19 @@ aplicarValidacion(inputCorreo, correoValido);
     if (formularioValido) {
         alert("¡Formulario enviado correctamente!");
     } 
+}
+
+/* FUNCION DE LOS BOTONES DE LA TABLA */
+
+function alternar(vista) {
+    const tabla = document.getElementById('vista-tabla');
+    const imagen = document.getElementById('vista-imagen');
+
+    if (vista === 'tabla') {
+        tabla.classList.remove('d-none');
+        imagen.classList.add('d-none');
+    } else {
+        tabla.classList.add('d-none');
+        imagen.classList.remove('d-none');
+    }
 }

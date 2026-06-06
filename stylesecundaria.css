@@ -1,29 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 
 :root {
    --letra: 'Montserrat', sans-serif;
    --color-dorado: #d4a007;
    --color-de-fondo: #f8f9fa;
    --color-de-h2: #212529;
-   --color-cards:  #b58906;
+   --color-cards: #b58906;
+   --transicion: all 0.3s ease;
 }
 
 body { 
     font-family: var(--letra);
-     background-color: var(--color-de-fondo)
-    }
+    background-color: var(--color-de-fondo);
+}
 
-  /* GALERIA*/
+/* --- GALERÍA --- */
 .texto-seccion {
-     text-align: center; 
-     margin-bottom: 50px; 
-    }
+    text-align: center; 
+    margin-bottom: 50px; 
+}
 .texto-seccion h2 { 
     text-transform: uppercase; 
     letter-spacing: 2px; 
     font-weight: 700; 
     font-size: 40px; 
-    color:var(--color-de-h2);
+    color: var(--color-de-h2);
     margin-bottom: 15px; 
 }
 .texto-seccion span { 
@@ -34,12 +35,12 @@ body {
     margin-bottom: 20px; 
 }
 
-/* LAS CARDS DE GALERIA */
 .card { 
     border-radius: 12px; 
     border: 2px solid transparent; 
-    transition: all 0.5s ease; 
+    transition: var(--transicion); 
     box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+    overflow: hidden;
 }
 .card:hover { 
     border-color: var(--color-dorado); 
@@ -49,119 +50,88 @@ body {
 .card-img-top { 
     height: 300px; 
     object-fit: cover;
- }
-
-/* --- FORMULARIO Y CONTACTO --- */
-             /*BOTON*/
-.btn-primary {
-     background-color: var(--color-dorado);
-      border: none;
-       padding: 10px 30px;
-     }
-
-.btn-primary:hover {
-     background-color: var(--color-cards); 
-    }
-
-   /*FORMULARIO*/
-footer {
-    padding: 50px 0;
 }
 
-.form-label {
-    font-weight: 600;
-}
-
+/* --- FORMULARIO Y BOTONES --- */
 .btn-primary {
     background-color: var(--color-dorado);
     border: none;
-    padding: 10px 30px;
+    padding: 12px 30px;
     font-weight: 700;
-    transition: background 0.3s ease;
+    transition: var(--transicion);
 }
-
 .btn-primary:hover {
     background-color: var(--color-cards);
 }
-/*HORARIO*/
-/* Estilos específicos para la Tabla de Horarios */
+
+footer {
+    padding: 60px 0; /* Más espacio para un footer limpio */
+}
+iframe {
+    height: 400px !important; 
+    width: 100%;
+}
+
+/* --- HORARIOS --- */
 .table {
     background-color: #ffffff;
     border-radius: 12px;
-    border-collapse: separate; /* Necesario para que el border-radius funcione */
+    border-collapse: separate;
     border-spacing: 0;
-    overflow: hidden; /* Esto oculta los bordes cuadrados en las esquinas */
+    overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 70px;
 }
-
 .table thead {
     background-color: var(--color-dorado);
     color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
 }
-
 .table thead th {
     border: none;
-    padding: 15px;
+    padding: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
-
-.table tbody tr {
-    transition: background-color 0.3s ease;
-}
-
-/* Efecto hover premium al pasar el mouse */
-.table tbody tr:hover {
-    background-color: rgba(212, 160, 7, 0.05); /* Un toque de dorado muy suave */
-}
-
 .table tbody td {
-    padding: 12px;
+    padding: 15px;
     border-color: #eee;
-    color: #333;
 }
-
-/* Para que la primera columna (horarios) resalte un poco más */
+.table tbody tr:hover {
+    background-color: rgba(212, 160, 7, 0.05);
+}
 .table tbody td.fw-bold {
     color: var(--color-dorado);
 }
 
-/* Estilo para los horarios */
 .horario-principal {
-    font-size: 20px !important;
+    font-size: 20px;
     font-weight: 700;
-    color: #212529 !important;
+    color: var(--color-de-h2);
 }
-
 .horario-finde {
     font-size: 18px;
     color: var(--color-dorado);
     font-weight: 600;
 }
 
-
-/* Botones personalizados */
+.horarioTabla {
+    text-align: center;
+    margin-bottom: 40px;
+}
 .btn-dark {
     background-color: #212529;
     border-radius: 8px;
-    font-weight: 700;
+    padding: 10px 25px;
+    margin: 0 5px;
 }
-
 .btn-outline-warning {
     color: var(--color-dorado);
     border: 2px solid var(--color-dorado);
     border-radius: 8px;
+    padding: 8px 25px;
+    margin: 0 5px;
     font-weight: 700;
 }
-
 .btn-outline-warning:hover {
     background-color: var(--color-dorado);
     color: white;
-}
-.horarioTabla{
-    text-align:center;
-    margin-bottom: 50px;
-
 }
