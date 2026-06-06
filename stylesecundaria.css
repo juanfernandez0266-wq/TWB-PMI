@@ -14,6 +14,14 @@ body {
     background-color: var(--color-de-fondo);
 }
 
+/* Espaciado general entre secciones */
+section, 
+.container > .row, 
+.container > .texto-seccion, 
+footer {
+    margin-bottom: 80px !important; /* Esto separa visualmente cada bloque */
+}
+
 /* --- GALERÍA --- */
 .texto-seccion {
     text-align: center; 
@@ -53,6 +61,11 @@ body {
 }
 
 /* --- FORMULARIO Y BOTONES --- */
+
+/* Ajuste específico para que el formulario no toque el mapa */
+footer .row:first-child {
+    padding-bottom: 40px;
+}
 .btn-primary {
     background-color: var(--color-dorado);
     border: none;
@@ -134,4 +147,9 @@ iframe {
 .btn-outline-warning:hover {
     background-color: var(--color-dorado);
     color: white;
+}
+/* Mejora el padding dentro de la tabla */
+.table-responsive {
+    margin-top: 30px;
+    padding: 20px;
 }
