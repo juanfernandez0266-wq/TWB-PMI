@@ -12,14 +12,10 @@
 body { 
     font-family: var(--letra);
     background-color: var(--color-de-fondo);
+    font-size: 14px;
 }
-
-/* Espaciado general entre secciones */
-section, 
-.container > .row, 
-.container > .texto-seccion, 
-footer {
-    margin-bottom: 80px !important; /* Esto separa visualmente cada bloque */
+.container {
+    max-width: 1000px !important; 
 }
 
 /* --- GALERÍA --- */
@@ -27,11 +23,11 @@ footer {
     text-align: center; 
     margin-bottom: 50px; 
 }
-.texto-seccion h2 { 
+.texto-seccion h3 { 
     text-transform: uppercase; 
     letter-spacing: 2px; 
     font-weight: 700; 
-    font-size: 40px; 
+    font-size: 28px; 
     color: var(--color-de-h2);
     margin-bottom: 15px; 
 }
@@ -39,12 +35,12 @@ footer {
     display: block; 
     color: var(--color-dorado); 
     font-weight: 600; 
-    font-size: 20px; 
+    font-size: 18px; 
     margin-bottom: 20px; 
 }
 
 .card { 
-    border-radius: 12px; 
+    border-radius: 8px; 
     border: 2px solid transparent; 
     transition: var(--transicion); 
     box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
@@ -56,20 +52,16 @@ footer {
     box-shadow: 0 20px 30px rgba(0,0,0,0.2); 
 }
 .card-img-top { 
-    height: 300px; 
+    height: 200px; 
     object-fit: cover;
 }
 
-/* --- FORMULARIO Y BOTONES --- */
+/* --- contacto --- */
 
-/* Ajuste específico para que el formulario no toque el mapa */
-footer .row:first-child {
-    padding-bottom: 40px;
-}
 .btn-primary {
     background-color: var(--color-dorado);
     border: none;
-    padding: 12px 30px;
+    padding: 8px 20px;
     font-weight: 700;
     transition: var(--transicion);
 }
@@ -77,17 +69,17 @@ footer .row:first-child {
     background-color: var(--color-cards);
 }
 
-footer {
-    padding: 60px 0; /* Más espacio para un footer limpio */
-}
 iframe {
     height: 400px !important; 
     width: 100%;
 }
+.form-control {
+    font-size: 14px !important;
+}
 
 /* --- HORARIOS --- */
 .table {
-    background-color: #ffffff;
+background-color: transparent;
     border-radius: 12px;
     border-collapse: separate;
     border-spacing: 0;
@@ -108,34 +100,6 @@ iframe {
     padding: 15px;
     border-color: #eee;
 }
-.table tbody tr:hover {
-    background-color: rgba(212, 160, 7, 0.05);
-}
-.table tbody td.fw-bold {
-    color: var(--color-dorado);
-}
-
-.horario-principal {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--color-de-h2);
-}
-.horario-finde {
-    font-size: 18px;
-    color: var(--color-dorado);
-    font-weight: 600;
-}
-
-.horarioTabla {
-    text-align: center;
-    margin-bottom: 40px;
-}
-.btn-dark {
-    background-color: #212529;
-    border-radius: 8px;
-    padding: 10px 25px;
-    margin: 0 5px;
-}
 .btn-outline-warning {
     color: var(--color-dorado);
     border: 2px solid var(--color-dorado);
@@ -144,10 +108,7 @@ iframe {
     margin: 0 5px;
     font-weight: 700;
 }
-.btn-outline-warning:hover {
-    background-color: var(--color-dorado);
-    color: white;
-}
+
 /* Mejora el padding dentro de la tabla */
 .table-responsive {
     margin-top: 30px;
