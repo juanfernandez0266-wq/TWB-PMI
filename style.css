@@ -1,45 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 
 :root {
    --letra: 'Montserrat', sans-serif;
    --color-dorado: #d4a007;
    --color-de-fondo: #f8f9fa;
    --color-de-h2: #212529;
-   --color-cards:  #b58906;
+   --color-cards: #b58906;
+   --transicion: all 0.3s ease;
 }
 
 body { 
     font-family: var(--letra);
-     background-color: var(--color-de-fondo)
-    }
+    background-color: var(--color-de-fondo);
+    font-size: 16px;
+}
+.container {
+    max-width: 1000px !important; 
+}
 
-  /* GALERIA*/
+/* --- GALERÍA --- */
 .texto-seccion {
-     text-align: center; 
-     margin-bottom: 50px; 
-    }
-.texto-seccion h2 { 
+    text-align: center; 
+    margin-bottom: 50px; 
+}
+.texto-seccion h3 { 
     text-transform: uppercase; 
     letter-spacing: 2px; 
     font-weight: 700; 
-    font-size: 40px; 
-    color:var(--color-de-h2);
-    margin-bottom: 15px; 
+    font-size: 28px; 
+    color: var(--color-de-h2);
+    margin-top: 60px;
 }
 .texto-seccion span { 
     display: block; 
     color: var(--color-dorado); 
     font-weight: 600; 
-    font-size: 20px; 
+    font-size: 18px; 
     margin-bottom: 20px; 
 }
 
-/* LAS CARDS DE GALERIA */
 .card { 
-    border-radius: 12px; 
+    border-radius: 8px; 
     border: 2px solid transparent; 
-    transition: all 0.5s ease; 
+    transition: var(--transicion); 
     box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+    overflow: hidden;
 }
 .card:hover { 
     border-color: var(--color-dorado); 
@@ -47,42 +52,31 @@ body {
     box-shadow: 0 20px 30px rgba(0,0,0,0.2); 
 }
 .card-img-top { 
-    height: 300px; 
+    height: 200px; 
     object-fit: cover;
- }
-
-/* --- FORMULARIO Y CONTACTO --- */
-             /*BOTON*/
-.btn-primary {
-     background-color: var(--color-dorado);
-      border: none;
-       padding: 10px 30px;
-     }
-
-.btn-primary:hover {
-     background-color: var(--color-cards); 
-    }
-
-   /*FORMULARIO*/
-footer {
-    padding: 50px 0;
 }
 
-.form-label {
-    font-weight: 600;
-}
+/* --- contacto --- */
 
 .btn-primary {
     background-color: var(--color-dorado);
     border: none;
-    padding: 10px 30px;
+    padding: 8px 20px;
     font-weight: 700;
-    transition: background 0.3s ease;
+    transition: var(--transicion);
 }
-
 .btn-primary:hover {
     background-color: var(--color-cards);
 }
+
+iframe {
+    height: 400px !important; 
+    width: 100%;
+}
+.form-control {
+    font-size: 14px !important;
+}
+
 /*HORARIO*/
 /* Estilos específicos para la Tabla de Horarios */
 .table {
@@ -166,34 +160,34 @@ footer {
 
 }
 /*CARRUSEL DEL HORARIO*/
-/* Limitamos el alto máximo del carrusel */
-.carousel-inner {
-    max-height: 500px; /* Ajusta según el tamaño que prefieras */
-    background-color: #f8f9fa; /* Color de fondo por si la imagen es pequeña */
-}
 
-/* Forzamos a que la imagen se adapte sin deformarse */
-.carousel-item img {
-    height: 500px; /* Debe coincidir con el max-height de arriba */
-    width: 100%;
-    object-fit: contain; /* Esta es la propiedad clave */
-}
-
-
-/*  Contenedor principal: El "Marco Dorado" */
-.contenedor-galeria-premium {
+.contenedor-carrusel-premium {
     background-color: #ffffff;
-    border: 3px solid var(--color-dorado); /* Borde dorado marcado */
-    border-radius: 25px; /* Esquinas muy redondeadas para un look moderno */
-    padding: 15px; /* Espacio entre el borde y la imagen */
-    transition: transform 0.4s ease;
-    
+    border: 2px solid transparent; /* Mismo borde que tus cards */
+    border-radius: 8px;           /* Mismo radio que tus cards */
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Misma sombra que tus cards */
+    transition: var(--transicion);
+    overflow: hidden;
 }
 
-/*  Ajuste de imágenes para que no se deformen */
+/* Efecto hover al pasar el mouse (igual que tus tarjetas) */
+.contenedor-carrusel-premium:hover {
+    border-color: var(--color-dorado);
+    transform: scale(1.02); /* Zoom suave */
+    box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+}
+
+/* Ajuste del carrusel interno */
+#carouselExampleDark {
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* La imagen */
 .carousel-item img {
-    height: 450px;
-    object-fit: contain; /* Mantiene la proporción original */
-    background-color: #ffffff;
+    height: 400px;
+    object-fit: contain;
+    background-color: #fff;
 }
 
