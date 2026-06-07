@@ -55,7 +55,6 @@ aplicarValidacion(inputCorreo, correoValido);
 }
 
 /* FUNCION DE LOS BOTONES DE LA TABLA */
-
 function alternar(vista) {
     const tabla = document.getElementById('vista-tabla');
     const imagen = document.getElementById('vista-imagen');
@@ -63,7 +62,7 @@ function alternar(vista) {
     if (vista === 'tabla') {
         tabla.classList.remove('d-none');
         imagen.classList.add('d-none');
-    } else {
+    } else if (vista === 'imagen') {
         tabla.classList.add('d-none');
         imagen.classList.remove('d-none');
     }

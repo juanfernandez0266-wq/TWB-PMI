@@ -77,40 +77,116 @@ iframe {
     font-size: 14px !important;
 }
 
-/* --- HORARIOS --- */
+/*HORARIO*/
+/* Estilos específicos para la Tabla de Horarios */
 .table {
-background-color: transparent;
+    background-color: #ffffff;
     border-radius: 12px;
-    border-collapse: separate;
+    border-collapse: separate; /* Necesario para que el border-radius funcione */
     border-spacing: 0;
-    overflow: hidden;
+    overflow: hidden; /* Esto oculta los bordes cuadrados en las esquinas */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 70px;
 }
+
 .table thead {
     background-color: var(--color-dorado);
     color: #ffffff;
-}
-.table thead th {
-    border: none;
-    padding: 18px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-weight: 700;
 }
-.table tbody td {
+
+.table thead th {
+    border: none;
     padding: 15px;
-    border-color: #eee;
 }
+
+.table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto hover premium al pasar el mouse */
+.table tbody tr:hover {
+    background-color: rgba(212, 160, 7, 0.05); /* Un toque de dorado muy suave */
+}
+
+.table tbody td {
+    padding: 12px;
+    border-color: #eee;
+    color: #333;
+}
+
+/* Para que la primera columna (horarios) resalte un poco más */
+.table tbody td.fw-bold {
+    color: var(--color-dorado);
+}
+
+/* Estilo para los horarios */
+.horario-principal {
+    font-size: 20px !important;
+    font-weight: 700;
+    color: #212529 !important;
+}
+
+.horario-finde {
+    font-size: 18px;
+    color: var(--color-dorado);
+    font-weight: 600;
+}
+
+
+/* Botones personalizados */
+.btn-dark {
+    background-color: #212529;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
 .btn-outline-warning {
     color: var(--color-dorado);
     border: 2px solid var(--color-dorado);
     border-radius: 8px;
-    padding: 8px 25px;
-    margin: 0 5px;
     font-weight: 700;
 }
 
-/* Mejora el padding dentro de la tabla */
-.table-responsive {
-    margin-top: 30px;
-    padding: 20px;
+.btn-outline-warning:hover {
+    background-color: var(--color-dorado);
+    color: white;
+}
+.horarioTabla{
+    text-align:center;
+    margin-bottom: 50px;
+
+}
+/*CARRUSEL DEL HORARIO*/
+
+.contenedor-carrusel-premium {
+    background-color: #ffffff;
+    border: 2px solid transparent; /* Mismo borde que tus cards */
+    border-radius: 8px;           /* Mismo radio que tus cards */
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Misma sombra que tus cards */
+    transition: var(--transicion);
+    overflow: hidden;
+}
+
+/* Efecto hover al pasar el mouse (igual que tus tarjetas) */
+.contenedor-carrusel-premium:hover {
+    border-color: var(--color-dorado);
+    transform: scale(1.02); /* Zoom suave */
+    box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+}
+
+/* Ajuste del carrusel interno */
+#carouselExampleDark {
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* La imagen */
+.carousel-item img {
+    height: 400px;
+    object-fit: contain;
+    background-color: #fff;
 }
