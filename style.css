@@ -9,6 +9,7 @@
    --transicion: all 0.3s ease;
 }
 
+/* --- CONFIGURACIÓN GLOBAL --- */
 body { 
     font-family: var(--letra);
     background-color: var(--color-de-fondo);
@@ -18,27 +19,7 @@ body {
     max-width: 1000px !important; 
 }
 
-/* --- GALERÍA --- */
-.texto-seccion {
-    text-align: center; 
-    margin-bottom: 50px; 
-}
-.texto-seccion h3 { 
-    text-transform: uppercase; 
-    letter-spacing: 2px; 
-    font-weight: 700; 
-    font-size: 28px; 
-    color: var(--color-de-h2);
-    margin-top: 60px;
-}
-.texto-seccion span { 
-    display: block; 
-    color: var(--color-dorado); 
-    font-weight: 600; 
-    font-size: 18px; 
-    margin-bottom: 20px; 
-}
-
+/* --- COMPONENTES --- */
 .card { 
     border-radius: 8px; 
     border: 2px solid transparent; 
@@ -51,13 +32,8 @@ body {
     transform: scale(1.03); 
     box-shadow: 0 20px 30px rgba(0,0,0,0.2); 
 }
-.card-img-top { 
-    height: 200px; 
-    object-fit: cover;
-}
 
-/* --- contacto --- */
-
+/* BOTONES */
 .btn-primary {
     background-color: var(--color-dorado);
     border: none;
@@ -68,27 +44,105 @@ body {
 .btn-primary:hover {
     background-color: var(--color-cards);
 }
+.btn-dark {
+    background-color: #212529;
+    border-radius: 8px;
+    font-weight: 700;
+}
+.btn-outline-warning {
+    color: var(--color-dorado);
+    border: 2px solid var(--color-dorado);
+    border-radius: 8px;
+    font-weight: 700;
+}
+.btn-outline-warning:hover {
+    background-color: var(--color-dorado);
+    color: white;
+}
 
+/* --- SECCIONES --- */
+
+/* GALERÍA */
+.texto-seccion {
+    text-align: center; 
+    margin-bottom: 50px; 
+}
+.texto-seccion h3 { 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    font-weight: 700; 
+    font-size: 35px; 
+    color: var(--color-de-h2);
+    margin-top: 60px;
+}
+.texto-seccion span { 
+    display: block; 
+    color: var(--color-dorado); 
+    font-weight: 600; 
+    font-size: 18px; 
+    margin-bottom: 20px; 
+}
+.card-img-top { 
+    height: 200px; 
+    object-fit: cover;
+}
+
+/* CONTACTO */
 iframe {
-    height: 400px !important; 
+    height: 450px !important; 
     width: 100%;
 }
 .form-control {
-    font-size: 14px !important;
+    font-size: 16px !important;
+}
+.section-contacto {
+    padding-top: 48px;  
+    padding-bottom: 48px;
+}
+.info-adicional-container {
+    margin-top: 48px;   
+    padding-top: 32px;  
+}
+.card-contacto {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 24px;      
+    transition: var(--transicion);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.card-contacto:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-dorado);
+}
+.info-label {
+    color: var(--color-dorado);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;    
+    margin-bottom: 8px; 
+    display: block;
+}
+.info-link {
+    font-size: 18px;    
+    color: #212529;
+    text-decoration: none;
+    font-weight: 600;
+}
+.info-link:hover {
+    color: var(--color-dorado);
 }
 
-/*HORARIO*/
-/* Estilos específicos para la Tabla de Horarios */
+/* HORARIO */
 .table {
     background-color: #ffffff;
     border-radius: 12px;
-    border-collapse: separate; /* Necesario para que el border-radius funcione */
+    border-collapse: separate;
     border-spacing: 0;
-    overflow: hidden; /* Esto oculta los bordes cuadrados en las esquinas */
+    overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 70px;
 }
-
 .table thead {
     background-color: var(--color-dorado);
     color: #ffffff;
@@ -96,98 +150,60 @@ iframe {
     letter-spacing: 1px;
     font-weight: 700;
 }
-
 .table thead th {
     border: none;
     padding: 15px;
 }
-
 .table tbody tr {
     transition: background-color 0.3s ease;
 }
-
-/* Efecto hover premium al pasar el mouse */
 .table tbody tr:hover {
-    background-color: rgba(212, 160, 7, 0.05); /* Un toque de dorado muy suave */
+    background-color: rgba(212, 160, 7, 0.05);
 }
-
 .table tbody td {
     padding: 12px;
     border-color: #eee;
     color: #333;
 }
-
-/* Para que la primera columna (horarios) resalte un poco más */
 .table tbody td.fw-bold {
     color: var(--color-dorado);
 }
-
-/* Estilo para los horarios */
 .horario-principal {
     font-size: 20px !important;
     font-weight: 700;
     color: #212529 !important;
 }
-
 .horario-finde {
     font-size: 18px;
     color: var(--color-dorado);
     font-weight: 600;
 }
-
-
-/* Botones personalizados */
-.btn-dark {
-    background-color: #212529;
-    border-radius: 8px;
-    font-weight: 700;
-}
-
-.btn-outline-warning {
-    color: var(--color-dorado);
-    border: 2px solid var(--color-dorado);
-    border-radius: 8px;
-    font-weight: 700;
-}
-
-.btn-outline-warning:hover {
-    background-color: var(--color-dorado);
-    color: white;
-}
 .horarioTabla{
     text-align:center;
     margin-bottom: 50px;
-
 }
-/*CARRUSEL DEL HORARIO*/
 
+/* CARRUSEL DEL HORARIO */
 .contenedor-carrusel-premium {
     background-color: #ffffff;
-    border: 2px solid transparent; /* Mismo borde que tus cards */
-    border-radius: 8px;           /* Mismo radio que tus cards */
+    border: 2px solid transparent;
+    border-radius: 8px;
     padding: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Misma sombra que tus cards */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     transition: var(--transicion);
     overflow: hidden;
 }
-
-/* Efecto hover al pasar el mouse (igual que tus tarjetas) */
 .contenedor-carrusel-premium:hover {
     border-color: var(--color-dorado);
-    transform: scale(1.02); /* Zoom suave */
+    transform: scale(1.02);
     box-shadow: 0 20px 30px rgba(0,0,0,0.2);
 }
-
-/* Ajuste del carrusel interno */
 #carouselExampleDark {
     border-radius: 6px;
     overflow: hidden;
 }
-
-/* La imagen */
 .carousel-item img {
     height: 400px;
     object-fit: contain;
     background-color: #fff;
 }
-

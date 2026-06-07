@@ -9,77 +9,74 @@
     <title>Contacto</title>
   </head>
   <body>
-       <!--    FOOTER DE CONTACTO -->
-       
-         <footer class="bg-light border-top ">
-            <div class="container py-3">
-               <div class="row mb-4">
-                 <div class="texto-seccion text-center">
-                   <h3 >Contacto</h3>
-                 </div>
-            
-                 <div class="col-md-6">
-                   <p>Utilice este formulario para preguntas generales sobre el gimnasio, detalles de la membresía, programas de entrenamiento y disponibilidad de clases.</p>
-                            <!-- SECCIÓN formulario -->
-                    <form class="row g-3 needs-validation" id="formulario-contacto" novalidate>
-                        <div class="col-md-6 mb-2">
-                            <label for="nombre-contac" class="form-label">Nombre* </label>
-                            <input type="text" class="form-control" id="nombre-contac" required>
-                             <div class="valid-feedback">¡Perfecto!
-                             </div> 
-                             <div class="invalid-feedback">Solo letras, mínimo 3 caracteres.
-                             </div>
-                        </div>
-                        <div class="col-md-6 mb-2">
-                            <label for="apellido-contac" class="form-label">Apellido* </label>
-                            <input type="text" class="form-control" id="apellido-contac" required>
-                            <div class="valid-feedback">¡Perfecto!</div> 
-                            <div class="invalid-feedback">Solo letras, mínimo 3 caracteres.</div>
-                        </div>
-                        <div class="col-md-6 mb-2">
-                            <label for="tel-contac" class="form-label">Telefono* </label>
-                            <input type="tel" class="form-control" id="tel-contac" required>
-                            <div class="valid-feedback">¡Perfecto!</div> 
-                            <div class="invalid-feedback">El teléfono debe contener 10 dígitos numéricos.</div>
-                        </div>
-                        <div class="col-md-6 mb-2">
-                            <label for="correo-contac" class="form-label">Correo Electronico*</label>
-                            <input type="email" class="form-control" id="correo-contac" required>
-                            <div class="valid-feedback">¡Perfecto!</div> 
-                            <div class="invalid-feedback">Debe incluir @ y .com</div>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                            <label for="mens-contac" class="form-label">Mensaje</label>
-                            <textarea class="form-control" rows="5" id="mens-contac" required></textarea>
-                        </div>
-                        <div class="col-12 ">
-                            <button class="btn btn-primary px-4" type="button" onclick=" validar()">Enviar</button>
-                        </div>
-                    </form> 
-                </div>
-                <!--MAPA-->
+    <section class="bg-light border-top">
+      <div class="container py-3">
+        <div class="row mb-4">
+          <div class="texto-seccion text-center">
+            <h3>Contacto</h3>
+          </div>
 
-                <div class="col-md-6">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13338.570319178536!2d-66.3391983!3d-33.3020125!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d43954944105dd%3A0x99c25502f531d5a2!2sJun%C3%ADn%20741%2C%20D5700%20San%20Luis!5e0!3m2!1ses!2sar!4v1780356289370!5m2!1ses!2sar" class="w-100 rounded" allowfullscreen="" loading="lazy"></iframe>
-                </div>
+          <div class="col-md-6">
+            <p>Utilice este formulario para preguntas generales sobre el gimnasio, detalles de la membresía, programas de entrenamiento y disponibilidad de clases.</p>
+            <!-- FORMULARIO DE CONTACTO -->
+            <form class="row g-3 needs-validation" id="formulario-contacto" novalidate>
+              <div class="col-md-6 mb-2">
+                <label for="nombre-contac" class="form-label">Nombre* </label>
+                <input type="text" class="form-control" id="nombre-contac" required>
+                <div class="valid-feedback">¡Perfecto!</div>
+                <div class="invalid-feedback">Solo letras, mínimo 3 caracteres.</div>
+              </div>
+              <div class="col-md-6 mb-2">
+                <label for="apellido-contac" class="form-label">Apellido* </label>
+                <input type="text" class="form-control" id="apellido-contac" required>
+                <div class="valid-feedback">¡Perfecto!</div>
+                <div class="invalid-feedback">Solo letras, mínimo 3 caracteres.</div>
+              </div>
+              <div class="col-md-6 mb-2">
+                <label for="tel-contac" class="form-label">Telefono* </label>
+                <input type="tel" class="form-control" id="tel-contac" required>
+                <div class="valid-feedback">¡Perfecto!</div>
+                <div class="invalid-feedback">El teléfono debe contener 10 dígitos numéricos.</div>
+              </div>
+              <div class="col-md-6 mb-2">
+                <label for="correo-contac" class="form-label">Correo Electronico*</label>
+                <input type="email" class="form-control" id="correo-contac" required>
+                <div class="valid-feedback">¡Perfecto!</div>
+                <div class="invalid-feedback">Debe incluir @ y .com</div>
+              </div>
+              <div class="col-md-12 mb-3">
+                <label for="mens-contac" class="form-label">Mensaje</label>
+                <textarea class="form-control" rows="5" id="mens-contac" required></textarea>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary px-4" type="button" onclick="validar()">Enviar</button>
+              </div>
+            </form>
+          </div>
+           <!-- UBICACION DEL MAPA -->
+          <div class="col-md-6">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13338.570319178536!2d-66.3391983!3d-33.3020125!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d43954944105dd%3A0x99c25502f531d5a2!2sJun%C3%ADn%20741%2C%20D5700%20San%20Luis!5e0!3m2!1ses!2sar!4v1780356289370!5m2!1ses!2sar" class="w-100 rounded" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+           <!-- INFORMACION ADICIONAL -->
+        <div class="row info-adicional-container border-top">
+          <div class="col-md-6 mb-3">
+            <div class="card-contacto text-center">
+              <span class="info-label">Email</span>
+              <a href="mailto:toribiomendoza@gmail.com" class="info-link">toribiomendoza@gmail.com</a>
             </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="card-contacto text-center">
+              <span class="info-label">WhatsApp</span>
+              <a href="https://wa.me/5491124730713?text=Hola!" class="info-link">(+54) 2 66-593-0771</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
 
-            <!--iNFORMACION ADICIONAL-->
-                <div class=" row border-top">
-                    <div class="col-md-6">
-                        <p class="mb-0 fw-bold">Email</p>
-                          <a href="mailto:toribiomendoza@gmail.com" class="text-dark text-decoration-none">toribiomendoza@gmail.com</a>
-                          </a>
-                    </div>
-                    <div class="col-md-6">
-                        <p class="mb-0 fw-bold" >Whatsapp</p>
-                        <a href="https://wa.me/5491124730713?text=Hola!" class="text-dark text-decoration-none">(+54) 2 66-593-0771
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </footer>
- </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="javascript.js"></script>
   </body>
