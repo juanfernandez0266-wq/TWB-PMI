@@ -6,13 +6,15 @@
    --color-de-fondo: #f8f9fa;
    --color-de-h2: #212529;
    --color-cards: #b58906;
+     --color-blanco: #ffffff;
    --transicion: all 0.3s ease;
+
 }
 
 /* --- CONFIGURACIÓN GLOBAL --- */
 body { 
     font-family: var(--letra);
-    background-color: var(--color-de-fondo);
+    background-color: var(--color-blanco);
     font-size: 16px;
 }
 .container {
@@ -105,7 +107,7 @@ iframe {
     padding-top: 32px;  
 }
 .card-contacto {
-    background-color: #ffffff;
+    background-color: var(--color-de-fondo);
     border: 1px solid #eee;
     border-radius: 12px;
     padding: 24px;      
@@ -133,8 +135,116 @@ iframe {
 .info-link:hover {
     color: var(--color-dorado);
 }
+/*---EL NAV Y PRINCIPIO DE LA PAGINA----*/
+.hero-contacto {
+    min-height: 520px;
+    padding: 170px 0 90px 0;
+    background:   /* imagen de fondo de la parte principal*/
+        linear-gradient( to right,
+            rgba(0, 0, 0, 0.82),
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.25) ),
+        url("/imagenes/localGym.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+.texto-hero-contacto {
+    color: var(--color-blanco);
+}
 
-/* HORARIO */
+.texto-hero-contacto span {
+    display: inline-block;
+    color: var(--color-dorado);
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+.texto-hero-contacto h1 {
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+}
+
+.texto-hero-contacto p {
+    font-size: 20px;
+    line-height: 1.7;
+    max-width: 650px;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+/*--- NAVBAR Y HEADER ---*/
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    background-color: transparent;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    box-shadow: none;
+}
+
+.navbar-brand img {
+    width: 65px;
+}
+
+.navbar-nav {
+    gap: 18px;
+    margin-left: auto;
+}
+
+.menu-link {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px !important;
+    color: var(--color-blanco) !important;
+    font-weight: 700;
+    text-decoration: none;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.menu-link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-dorado);
+    transform: skewX(-18deg) scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.menu-link:hover::before,
+.menu-link.active::before {
+    transform: skewX(-18deg) scaleX(1);
+}
+
+.menu-link:hover,
+.menu-link.active {
+    color: var(--color-negro) !important;
+}
+
+.navbar-toggler {
+    border: 1px solid rgba(255,255,255,0.7);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ----HORARIO----- */
 .table {
     background-color: #ffffff;
     border-radius: 12px;
