@@ -67,3 +67,4 @@ function alternar(vista) {
         imagen.classList.remove('d-none');
     }
 }
+

@@ -83,8 +83,9 @@ body {
     margin-bottom: 20px; 
 }
 .card-img-top { 
-    height: 200px; 
+    height: 250px; 
     object-fit: cover;
+    transition: transform 0.4s ease;
 }
 
 /* CONTACTO */
