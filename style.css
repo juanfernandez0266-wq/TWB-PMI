@@ -692,7 +692,7 @@ footer {
             rgba(0, 0, 0, 0.55),
             rgba(0, 0, 0, 0.25)
         ),
-        url("/imagenes/header/chico.png");
+        url("imagenes/header/chico.png");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1103,7 +1103,7 @@ footer {
             rgba(0, 0, 0, 0.55),
             rgba(0, 0, 0, 0.25)
         ),
-        url("../imagenes/chica.png");
+        url("imagenes/chica.png");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1364,7 +1364,7 @@ footer {
             rgba(0, 0, 0, 0.55),
             rgba(0, 0, 0, 0.25)
         ),
-        url("/imagenes/localgym.png");
+        url("imagenes/localgym.png");
     background-size: cover;
     background-position: center;
     display: flex;
