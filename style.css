@@ -1,67 +1,510 @@
-/* Importación de fuente */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
+
+/* =====================================================
+   ESTILO GENERAL DEL SITIO
+===================================================== */
 
 :root {
-   --letra: 'Montserrat', sans-serif;
-   --color-dorado: #d4a007;
+    --letra-principal: 'Montserrat', Arial, Helvetica, sans-serif;
+    --color-dorado: #d4a007;
+    --color-dorado-claro: #f1d100;
+    --color-dorado-oscuro: #b58906;
+    --color-negro: #111111;
+    --color-blanco: #ffffff;
+    --color-gris: #555555;
+    --color-fondo: #f8f9fa;
 }
 
 body {
-    font-family: var(--letra);
-    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-blanco);
+    color: var(--color-negro);
+    font-family: var(--letra-principal);
+    overflow-x: hidden;
 }
 
-/* --- ESTILO CENTRADO PREMIUM (Para ambos) --- */
+
+/* =====================================================
+   HEADER Y MENÚ PRINCIPAL
+===================================================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    background-color: transparent;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    box-shadow: none;
+    transition: top 0.35s ease, background-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* MENÚ AL BAJAR LA PÁGINA */
+
+.menu-con-fondo {
+    background-color: rgba(0, 0, 0, 0.82);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* MENÚ OCULTO CUANDO SE BAJA */
+
+.menu-oculto {
+    top: -130px;
+}
+
+
+
+.navbar-brand img {
+    width: 180px;
+}
+
+.navbar-nav {
+    gap: 18px;
+    margin-left: auto;
+}
+
+.enlace-menu {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px !important;
+    color: var(--color-blanco) !important;
+    font-weight: 700;
+    text-decoration: none;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.enlace-menu::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-dorado);
+    transform: skewX(-18deg) scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.enlace-menu:hover::before,
+.enlace-menu.active::before {
+    transform: skewX(-18deg) scaleX(1);
+}
+
+.enlace-menu:hover,
+.enlace-menu.active {
+    color: var(--color-negro) !important;
+}
+
+.navbar-toggler {
+    border: 1px solid rgba(255,255,255,0.7);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+/* =====================================================
+   INDEX - PORTADA Y CARRUSEL
+===================================================== */
+
+.portada {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+}
+
+.carousel,
+.carousel-inner,
+.carousel-item {
+    height: 100%;
+    width: 100%;
+    border-radius: 0 !important;
+    overflow: hidden;
+}
+
+.carousel-item {
+    position: relative;
+}
+
+.portada .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    filter: brightness(55%);
+    transform: scale(1);
+    transition: transform 4s ease;
+}
+
+.portada .carousel-item.active img {
+    transform: scale(1.06);
+}
+
+.fondo-oscuro {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,0.72),
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.15)
+    );
+    z-index: 1;
+}
+
+.contenido-portada {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    bottom: 20%;
+}
+
+.subtitulo {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-blanco);
+    margin-bottom: 18px;
+    animation: aparecerArriba 0.9s ease;
+}
+
+.contenido-portada h1 {
+    font-size: 68px;
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 20px;
+    color: var(--color-blanco);
+    animation: aparecerArriba 1.1s ease;
+}
+
+.contenido-portada p {
+    font-size: 21px;
+    font-weight: 400;
+    color: var(--color-blanco);
+    margin-bottom: 28px;
+    animation: aparecerArriba 1.3s ease;
+}
+
+.botones-portada {
+    animation: aparecerArriba 1.5s ease;
+}
+
+.btn-principal {
+    display: inline-block;
+    background-color: var(--color-dorado);
+    color: var(--color-negro);
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    border: none;
+    transition: 0.3s ease;
+}
+
+.btn-principal:hover {
+    background-color: var(--color-dorado-oscuro);
+    color: var(--color-negro);
+}
+
+.btn-secundario {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--color-blanco);
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.75);
+    margin-left: 10px;
+    transition: 0.3s ease;
+}
+
+.btn-secundario:hover {
+    background-color: rgba(255,255,255,0.18);
+    color: var(--color-blanco);
+}
+
+.carousel-indicators {
+    z-index: 5;
+    margin-bottom: 35px;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 75px;
+    height: 5px;
+    border-radius: 8px;
+    background-color: var(--color-dorado);
+    opacity: 0.5;
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+}
+
+
+/* =====================================================
+   INDEX - PRESENTACIÓN DEL GIMNASIO
+===================================================== */
+
+.presentacion {
+    background-color: var(--color-blanco);
+    padding: 100px 0 80px 0;
+    overflow: hidden;
+}
+
+.bloque-frase {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.frase-linea {
+    display: inline-block;
+    background-color: var(--color-dorado);
+    color: var(--color-negro);
+    font-family: var(--letra-principal);
+    font-size: 54px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 16px 28px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.12);
+}
+
+.frase-linea-1 {
+    transform: rotate(-2deg);
+    margin-left: 0;
+}
+
+.frase-linea-2 {
+    transform: rotate(-1deg);
+    margin-left: 60px;
+    padding: 18px 30px;
+}
+
+.texto-presentacion {
+    font-size: 21px;
+    line-height: 1.7;
+    font-weight: 400;
+    color: var(--color-gris);
+    max-width: 580px;
+    margin-bottom: 30px;
+}
+
+.btn-presentacion {
+    background-color: var(--color-dorado);
+    color: var(--color-negro);
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    border: none;
+    transition: 0.3s ease;
+}
+
+.btn-presentacion:hover {
+    background-color: var(--color-dorado-oscuro);
+    color: var(--color-negro);
+}
+
+.imagen-presentacion {
+    max-height: 700px;
+    object-fit: contain;
+}
+
+
+/* =====================================================
+   INDEX - TÍTULOS GENERALES DE SECCIÓN
+===================================================== */
+
 .texto-seccion {
-  text-align: center;
-  margin-bottom: 50px;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
 .texto-seccion h2 {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 700;
-  font-size: 40px;
-  color: #212529;
-  margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 40px;
+    color: #212529;
+    margin-bottom: 15px;
 }
 
 .texto-seccion span {
-  display: block;
-  color: var(--color-dorado);
-  font-weight: 600;
-  font-size: 20px;
-  margin-bottom: 20px;
+    display: block;
+    color: var(--color-dorado);
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
 }
 
-/* --- GALERÍA --- */
+.texto-seccion p {
+    max-width: 720px;
+    margin: auto;
+    color: var(--color-gris);
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   INDEX - SECCIÓN VIDEO
+===================================================== */
+
+.videos-inicio {
+    background-color: var(--color-blanco);
+    padding: 90px 0;
+    overflow: hidden;
+}
+
+.contenedor-video {
+    width: 100%;
+    height: 430px;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+}
+
+.contenedor-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.texto-video {
+    padding-left: 35px;
+    animation: aparecerDesdeDerecha 1s ease;
+}
+
+.texto-video span {
+    display: inline-block;
+    color: var(--color-dorado);
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.texto-video h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--color-negro);
+    margin-bottom: 20px;
+}
+
+.texto-video p {
+    color: var(--color-gris);
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.boton-video {
+    display: inline-block;
+    background-color: var(--color-dorado);
+    color: var(--color-negro);
+    padding: 12px 30px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s ease;
+}
+
+.boton-video:hover {
+    background-color: var(--color-dorado-oscuro);
+    color: var(--color-negro);
+}
+
+
+/* =====================================================
+   INDEX - GALERÍA
+===================================================== */
+
+.galeria {
+    background-color: var(--color-fondo);
+    padding: 40px 0;
+}
+
+.img-galeria {
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .img-galeria {
+    transform: scale(1.06);
+}
+
+
+/* =====================================================
+   COMPONENTES GENERALES - TARJETAS E IMÁGENES
+===================================================== */
+
 .card {
-  border-radius: 12px;
-  border: 2px solid transparent;
-  transition: all 0.5s ease;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    border: 2px solid transparent;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .card:hover {
-  border-color: var(--color-dorado);
-  transform: scale(1.03);
-  box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+    border-color: var(--color-dorado);
+    transform: scale(1.03);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.2);
 }
 
 .card-img-top {
-  height: 300px;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-/* --- FORMULARIO Y CONTACTO --- */
-footer {
-    padding: 50px 0;
+.card-title {
+    font-weight: 700;
+    color: var(--color-negro);
 }
+
+.card-text {
+    color: var(--color-gris);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   COMPONENTES GENERALES - FORMULARIOS
+===================================================== */
 
 .form-label {
     font-weight: 600;
+    color: var(--color-negro);
+}
+
+.form-control {
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    padding: 11px 14px;
+}
+
+.form-control:focus {
+    border-color: var(--color-dorado);
+    box-shadow: 0 0 0 0.2rem rgba(212, 160, 7, 0.20);
 }
 
 .btn-primary {
@@ -73,5 +516,989 @@ footer {
 }
 
 .btn-primary:hover {
-    background-color: #b58906;
+    background-color: var(--color-dorado-oscuro);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding: 50px 0;
+}
+
+
+/* =====================================================
+   ANIMACIONES
+===================================================== */
+
+@keyframes aparecerArriba {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes aparecerDesdeDerecha {
+    from {
+        opacity: 0;
+        transform: translateX(45px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =====================================================
+   ADAPTACIÓN PARA TABLET
+===================================================== */
+
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background-color: rgba(0,0,0,0.85);
+        padding: 15px;
+        margin-top: 15px;
+        border-radius: 10px;
+    }
+
+    .navbar-nav {
+        gap: 5px;
+    }
+
+    .contenido-portada h1 {
+        font-size: 52px;
+    }
+
+    .contenido-portada p {
+        font-size: 18px;
+    }
+
+    .presentacion {
+        text-align: center;
+        padding: 80px 0 60px 0;
+    }
+
+    .frase-linea {
+        font-size: 42px;
+    }
+
+    .frase-linea-2 {
+        margin-left: 0;
+    }
+
+    .texto-presentacion {
+        font-size: 18px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .imagen-presentacion {
+        margin-top: 35px;
+        max-height: 500px;
+    }
+
+    .contenedor-video {
+        height: 240px;
+    }
+
+    .texto-video h2 {
+        font-size: 28px;
+    }
+
+    .texto-video p {
+        font-size: 16px;
+    }
+}
+
+
+/* =====================================================
+   ADAPTACIÓN PARA CELULAR
+===================================================== */
+
+@media (max-width: 768px) {
+    .contenido-portada {
+        bottom: 14%;
+    }
+
+    .contenido-portada h1 {
+        font-size: 40px;
+    }
+
+    .contenido-portada p {
+        font-size: 16px;
+    }
+
+    .btn-principal,
+    .btn-secundario {
+        display: block;
+        width: fit-content;
+        margin-top: 10px;
+        margin-left: 0;
+    }
+
+    .bloque-frase {
+        align-items: center;
+        gap: 12px;
+    }
+
+    .frase-linea {
+        font-size: 30px;
+        padding: 12px 18px;
+        letter-spacing: 1px;
+    }
+
+    .frase-linea-2 {
+        margin-left: 0;
+    }
+
+    .texto-presentacion {
+        font-size: 16px;
+    }
+
+    .texto-seccion h2 {
+        font-size: 30px;
+    }
+
+    .texto-seccion span {
+        font-size: 17px;
+    }
+
+    .card-img-top {
+        height: 240px;
+    }
+}
+
+
+/* =====================================================
+   INSCRIPCIÓN - PORTADA
+===================================================== */
+
+.portada-inscripcion {
+    min-height: 520px;
+    padding: 170px 0 90px 0;
+    background:
+        linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.82),
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.25)
+        ),
+        url("/imagenes/header/chico.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.texto-portada-inscripcion {
+    color: var(--color-blanco);
+}
+
+.texto-portada-inscripcion span {
+    display: inline-block;
+    color: var(--color-dorado);
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+.texto-portada-inscripcion h1 {
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+}
+
+.texto-portada-inscripcion p {
+    font-size: 20px;
+    line-height: 1.7;
+    max-width: 650px;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+
+/* =====================================================
+   INSCRIPCIÓN - FORMULARIO
+===================================================== */
+
+.seccion-inscripcion {
+    background-color: var(--color-fondo);
+    padding: 90px 0;
+}
+
+.tarjeta-inscripcion {
+    border: none;
+    border-radius: 22px;
+    overflow: hidden;
+    background-color: var(--color-blanco);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+}
+
+.tarjeta-inscripcion .card-body {
+    padding: 50px;
+}
+
+.tarjeta-inscripcion .texto-seccion {
+    margin-bottom: 40px;
+}
+
+.tarjeta-inscripcion .texto-seccion h2 {
+    font-size: 36px;
+}
+
+.tarjeta-inscripcion .texto-seccion p {
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   INSCRIPCIÓN - CAMPOS DEL FORMULARIO
+===================================================== */
+
+.tarjeta-inscripcion .form-label {
+    font-weight: 700;
+    color: var(--color-negro);
+    margin-bottom: 8px;
+}
+
+.tarjeta-inscripcion .form-control {
+    border-radius: 14px;
+    border: 1px solid #d6d6d6;
+    padding: 13px 16px;
+    font-size: 16px;
+    background-color: #ffffff;
+}
+
+.tarjeta-inscripcion .form-control:focus {
+    border-color: var(--color-dorado);
+    box-shadow: 0 0 0 0.2rem rgba(212, 160, 7, 0.22);
+}
+
+.tarjeta-inscripcion .form-control.is-valid {
+    border-color: #198754;
+}
+
+.tarjeta-inscripcion .form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+.tarjeta-inscripcion .invalid-feedback {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   INSCRIPCIÓN - BOTÓN DEL FORMULARIO
+===================================================== */
+
+.tarjeta-inscripcion .btn-primary {
+    background-color: var(--color-dorado);
+    color: var(--color-negro);
+    border: none;
+    border-radius: 30px;
+    padding: 13px 34px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tarjeta-inscripcion .btn-primary:hover {
+    background-color: var(--color-dorado-oscuro);
+    color: var(--color-negro);
+}
+
+
+/* =====================================================
+   INSCRIPCIÓN - ADAPTACIÓN PARA TABLET
+===================================================== */
+
+@media (max-width: 992px) {
+    .portada-inscripcion {
+        min-height: 470px;
+        padding: 150px 0 70px 0;
+    }
+
+    .texto-portada-inscripcion h1 {
+        font-size: 46px;
+    }
+
+    .texto-portada-inscripcion p {
+        font-size: 18px;
+    }
+
+    .tarjeta-inscripcion .card-body {
+        padding: 38px;
+    }
+}
+
+
+/* =====================================================
+   INSCRIPCIÓN - ADAPTACIÓN PARA CELULAR
+===================================================== */
+
+@media (max-width: 768px) {
+    .portada-inscripcion {
+        min-height: 430px;
+        padding: 135px 0 60px 0;
+        text-align: center;
+    }
+
+    .texto-portada-inscripcion h1 {
+        font-size: 34px;
+    }
+
+    .texto-portada-inscripcion span {
+        font-size: 15px;
+        letter-spacing: 3px;
+    }
+
+    .texto-portada-inscripcion p {
+        font-size: 16px;
+    }
+
+    .seccion-inscripcion {
+        padding: 60px 0;
+    }
+
+    .tarjeta-inscripcion .card-body {
+        padding: 28px 22px;
+    }
+
+    .tarjeta-inscripcion .texto-seccion h2 {
+        font-size: 28px;
+    }
+
+    .tarjeta-inscripcion .texto-seccion p {
+        font-size: 15px;
+    }
+
+    .tarjeta-inscripcion .btn-primary {
+        width: 100%;
+    }
+}
+
+/* =====================================================
+   INSCRIPCIÓN - PLANES Y ACTIVIDADES
+===================================================== */
+
+.detalle-plan {
+    background-color: #fff8dd;
+    border-left: 5px solid var(--color-dorado);
+    padding: 15px 18px;
+    border-radius: 10px;
+    color: var(--color-negro);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.opciones-actividades {
+    background-color: #ffffff;
+    border: 1px solid #d6d6d6;
+    border-radius: 14px;
+    padding: 18px;
+}
+
+.opciones-actividades .form-check {
+    margin-bottom: 12px;
+}
+
+.opciones-actividades .form-check-label {
+    font-weight: 600;
+    color: var(--color-negro);
+}
+
+.opciones-actividades .form-check-input:checked {
+    background-color: var(--color-dorado);
+    border-color: var(--color-dorado);
+}
+
+.mensaje-error-actividades {
+    display: none;
+    color: #dc3545;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   FOOTER / PIE DE PÁGINA
+====================================================== */
+
+.footer-gym {
+    background-color: #111827;
+    color: #f8f9fa;
+    padding: 45px 0 20px 0;
+}
+
+.footer-gym h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.footer-gym h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.footer-gym p {
+    font-size: 0.95rem;
+    color: #d1d5db;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.footer-bloque {
+    margin-bottom: 25px;
+}
+
+.footer-bloque ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-bloque ul li {
+    color: #d1d5db;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.footer-bloque ul li a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-bloque ul li a:hover {
+    color: #ffffff;
+    padding-left: 4px;
+}
+
+/* Redes sociales */
+.footer-redes {
+    margin-top: 18px;
+}
+
+.footer-redes a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 38px;
+    height: 38px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-redes a:hover {
+    background-color: #38bdf8;
+    color: #111827;
+    transform: translateY(-3px);
+}
+
+/* Link de ubicación */
+.footer-mapa {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 10px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background-color: #38bdf8;
+    color: #111827;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-mapa:hover {
+    background-color: #ffffff;
+    color: #111827;
+}
+
+.footer-linea {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.footer-copy {
+    text-align: center;
+}
+
+.footer-copy p {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    margin: 0;
+}
+
+
+
+/* =====================================================
+   HORARIOS - STYLE DE VALE
+===================================================== */
+
+/* PORTADA DE HORARIOS */
+
+.portada-horarios {
+    min-height: 520px;
+    padding: 170px 0 90px 0;
+    background:
+        linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.82),
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.25)
+        ),
+        url("../imagenes/chica.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.texto-portada-horarios {
+    color: var(--color-blanco);
+}
+
+.texto-portada-horarios span {
+    display: inline-block;
+    color: var(--color-dorado);
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+.texto-portada-horarios h1 {
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+}
+
+.texto-portada-horarios p {
+    font-size: 20px;
+    line-height: 1.7;
+    max-width: 650px;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+
+/* SECCIÓN PRINCIPAL DE HORARIOS */
+
+.seccion-horarios {
+    background-color: var(--color-fondo);
+    padding: 70px 0;
+}
+
+.seccion-horarios .texto-seccion {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.seccion-horarios .texto-seccion h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 35px;
+    color: #212529;
+    margin-bottom: 18px;
+}
+
+.seccion-horarios .texto-seccion p {
+    color: var(--color-gris);
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.seccion-horarios .texto-seccion span {
+    display: block;
+    color: var(--color-dorado);
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 12px;
+}
+
+
+/* BOTONES DE VISTA */
+
+.botones-vista-horarios {
+    margin-bottom: 35px;
+}
+
+.seccion-horarios .btn-dark {
+    background-color: #212529;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.seccion-horarios .btn-outline-warning {
+    color: var(--color-dorado);
+    border: 2px solid var(--color-dorado);
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.seccion-horarios .btn-outline-warning:hover {
+    background-color: var(--color-dorado);
+    color: var(--color-blanco);
+}
+
+
+/* TABLA DE HORARIOS */
+
+.seccion-horarios .table {
+    background-color: var(--color-blanco);
+    border-radius: 12px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 70px;
+}
+
+.seccion-horarios .table thead {
+    background-color: var(--color-dorado);
+    color: var(--color-blanco);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.seccion-horarios .table thead th {
+    border: none;
+    padding: 15px;
+}
+
+.seccion-horarios .table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.seccion-horarios .table tbody tr:hover {
+    background-color: rgba(212, 160, 7, 0.05);
+}
+
+.seccion-horarios .table tbody td {
+    padding: 12px;
+    border-color: #eeeeee;
+    color: #333333;
+}
+
+.seccion-horarios .table tbody td.fw-bold {
+    color: var(--color-dorado);
+}
+
+
+/* CARRUSEL DE HORARIOS */
+
+.contenedor-carrusel-horarios {
+    background-color: var(--color-blanco);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.contenedor-carrusel-horarios:hover {
+    border-color: var(--color-dorado);
+    transform: scale(1.02);
+}
+
+.contenedor-carrusel-horarios img {
+    border-radius: 6px;
+}
+
+
+/* HORARIOS - ADAPTACIÓN PARA TABLET */
+
+@media (max-width: 992px) {
+    .portada-horarios {
+        min-height: 470px;
+        padding: 150px 0 70px 0;
+    }
+
+    .texto-portada-horarios h1 {
+        font-size: 46px;
+    }
+
+    .texto-portada-horarios p {
+        font-size: 18px;
+    }
+}
+
+
+/* HORARIOS - ADAPTACIÓN PARA CELULAR */
+
+@media (max-width: 768px) {
+    .portada-horarios {
+        min-height: 430px;
+        padding: 135px 0 60px 0;
+        text-align: center;
+    }
+
+    .texto-portada-horarios h1 {
+        font-size: 34px;
+    }
+
+    .texto-portada-horarios span {
+        font-size: 15px;
+        letter-spacing: 3px;
+    }
+
+    .texto-portada-horarios p {
+        font-size: 16px;
+    }
+
+    .seccion-horarios {
+        padding: 55px 0;
+    }
+
+    .seccion-horarios .texto-seccion h3 {
+        font-size: 28px;
+    }
+
+    .botones-vista-horarios .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 12px;
+    }
+}
+
+
+/* =====================================================
+   CONTACTO - STYLE DE VALE
+===================================================== */
+
+/* TÍTULO DE SECCIÓN USADO EN CONTACTO */
+
+.texto-seccion {
+    text-align: center; 
+    margin-bottom: 50px; 
+}
+
+.texto-seccion h3 { 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    font-weight: 700; 
+    font-size: 35px; 
+    color: #212529;
+    margin-top: 60px;
+}
+
+.texto-seccion span { 
+    display: block; 
+    color: var(--color-dorado); 
+    font-weight: 600; 
+    font-size: 18px; 
+    margin-bottom: 20px; 
+}
+
+
+/* HERO / PRESENTACIÓN DE CONTACTO */
+
+.hero-contacto {
+    min-height: 520px;
+    padding: 170px 0 90px 0;
+    background:
+        linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.82),
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.25)
+        ),
+        url("/imagenes/localgym.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.texto-hero-contacto {
+    color: var(--color-blanco);
+}
+
+.texto-hero-contacto span {
+    display: inline-block;
+    color: var(--color-dorado);
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+.texto-hero-contacto h1 {
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+}
+
+.texto-hero-contacto p {
+    font-size: 20px;
+    line-height: 1.7;
+    max-width: 650px;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+
+/* SECCIÓN DE CONTACTO */
+
+.section-contacto {
+    padding-top: 48px;  
+    padding-bottom: 48px;
+}
+
+.section-contacto iframe {
+    height: 450px !important; 
+    width: 100%;
+}
+
+.section-contacto .form-control {
+    font-size: 16px !important;
+}
+
+
+/* INFORMACIÓN ADICIONAL */
+
+.info-adicional-container {
+    margin-top: 48px;   
+    padding-top: 32px;  
+}
+
+.card-contacto {
+    background-color: var(--color-fondo);
+    border: 1px solid #eeeeee;
+    border-radius: 12px;
+    padding: 24px;      
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.card-contacto:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-dorado);
+}
+
+.info-label {
+    color: var(--color-dorado);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;    
+    margin-bottom: 8px; 
+    display: block;
+}
+
+.info-link {
+    font-size: 18px;    
+    color: #212529;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.info-link:hover {
+    color: var(--color-dorado);
+}
+
+
+/* CONTACTO - RESPONSIVE */
+
+@media (max-width: 992px) {
+    .hero-contacto {
+        min-height: 470px;
+        padding: 150px 0 70px 0;
+    }
+
+    .texto-hero-contacto h1 {
+        font-size: 46px;
+    }
+
+    .texto-hero-contacto p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-contacto {
+        min-height: 430px;
+        padding: 135px 0 60px 0;
+        text-align: center;
+    }
+
+    .texto-hero-contacto h1 {
+        font-size: 34px;
+    }
+
+    .texto-hero-contacto span {
+        font-size: 15px;
+        letter-spacing: 3px;
+    }
+
+    .texto-hero-contacto p {
+        font-size: 16px;
+    }
+
+    .section-contacto {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
 }
