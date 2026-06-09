@@ -15,13 +15,13 @@
             <div class="container">
 
                 <div class="row w-100 align-items-center">
-                   <!--LOGO DEL GMY
-                    <div class="col-md-3 col-4 ">
+<!--
+                    <div class="col-4 col-lg-2">
                         <a class="navbar-brand" href="index.html">
-                            <img src="./imagenes/logo_original.png" alt=" logo del gimansio"> 
+                            <img src="./imagenes/logo_original.png" alt="Logo del gimnasio" style="max-height: 50px;"  class="img-fluid">
                         </a>
-                    </div>
-                     -->
+                    </div>-->
+
                     <div class="col-8 d-lg-none text-end">
                         <button 
                             class="navbar-toggler" 
@@ -75,7 +75,6 @@
         </nav>
     </header>
 
-
     <main>
     <section class="hero-contacto">
       <div class="container">
@@ -95,7 +94,7 @@
                 </div>
             </div>
         </section>
-
+</main>
        <!--SECCION DE CONTACTO-->
 
     <section class="bg-light border-top">
@@ -108,7 +107,7 @@
           <div class="col-md-6">
             <p>Utilice este formulario para preguntas generales sobre el gimnasio, detalles de la membresía, programas de entrenamiento y disponibilidad de clases.</p>
             <!-- FORMULARIO DE CONTACTO -->
-             <form class="row g-3 needs-validation" id="formulario-contacto" novalidate  method="post">
+             <form class="row g-3 needs-validation" id="formulario-contacto" novalidate>
               <div class="col-md-6 mb-2">
                 <label for="nombre-contac" class="form-label">Nombre* </label>
                 <input type="text" class="form-control" id="nombre-contac" required>
@@ -138,7 +137,7 @@
                 <textarea class="form-control" rows="5" id="mens-contac" required></textarea>
               </div>
               <div class="col-12">
-                <button class="btn btn-primary px-4" type="button" onclick="validar()">Enviar</button>
+                <button class="btn btn-primary px-4" type="submit" >Enviar</button>
               </div>
             </form>
           </div>
@@ -169,8 +168,10 @@
         
       </div>
     </section>
-
+    <script src="javascript.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="javascript.js"></script>
+    
+  </body>
+</html>
   </body>
 </html>
