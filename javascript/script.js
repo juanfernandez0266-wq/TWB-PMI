@@ -476,3 +476,289 @@ function alternar(vista) {
         imagen.classList.remove("d-none");
     }
 }
+
+
+/* =====================================================
+    JS DE RAMIRO - CAMBIO DE CLASE DESTACADA
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const mainImg = document.getElementById("main-card-img");
+    const mainTitle = document.getElementById("main-card-title");
+    const mainDesc = document.getElementById("main-card-desc");
+
+    const tabs = document.querySelectorAll(".tab-item");
+
+    if (!mainImg || !mainTitle || !mainDesc || tabs.length === 0) {
+        return;
+    }
+
+    tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+
+            if (tab.classList.contains("active")) {
+                return;
+            }
+
+            const tabActiva = document.querySelector(".tab-item.active");
+
+            if (tabActiva) {
+                tabActiva.classList.remove("active");
+            }
+
+            tab.classList.add("active");
+
+            const nuevoTitulo = tab.getAttribute("data-title");
+            const nuevaDescripcion = tab.getAttribute("data-desc");
+            const nuevaImagen = tab.getAttribute("data-img");
+
+            mainImg.style.opacity = 0;
+            mainTitle.style.opacity = 0;
+            mainDesc.style.opacity = 0;
+
+            setTimeout(function () {
+                mainImg.src = nuevaImagen;
+                mainTitle.innerText = nuevoTitulo;
+                mainDesc.innerText = nuevaDescripcion;
+
+                mainImg.style.opacity = 1;
+                mainTitle.style.opacity = 1;
+                mainDesc.style.opacity = 1;
+            }, 150);
+        });
+    });
+});
+
+
+
+
+
+/* =====================================================
+   ACTIVIDADES JSON - CARGAR, FILTRAR Y ELIMINAR
+===================================================== */
+
+let actividades = [];
+let actividadesFiltradas = [];
+let categoriaActual = "Todas";
+
+document.addEventListener("DOMContentLoaded", function () {
+    const contenedorActividades = document.getElementById("contenedorActividades");
+
+    if (!contenedorActividades) {
+        return;
+    }
+
+    cargarActividadesDesdeJson();
+});
+
+
+function cargarActividadesDesdeJson() {
+    fetch("datos/actividades.json")
+        .then(function (respuesta) {
+            return respuesta.json();
+        })
+        .then(function (datos) {
+            actividades = datos;
+            actividadesFiltradas = actividades;
+
+            mostrarActividades();
+            mostrarPrimeraActividad();
+        })
+        .catch(function () {
+            alert("No se pudieron cargar las actividades desde el archivo JSON.");
+        });
+}
+
+
+function mostrarActividades() {
+    const contenedor = document.getElementById("contenedorActividades");
+
+    if (!contenedor) {
+        return;
+    }
+
+    contenedor.innerHTML = "";
+
+    if (actividadesFiltradas.length === 0) {
+        contenedor.innerHTML = "<p class='text-center text-muted'>No hay actividades disponibles para esta categoría.</p>";
+        limpiarActividadPrincipal();
+        return;
+    }
+
+    for (let i = 0; i < actividadesFiltradas.length; i++) {
+        const actividad = actividadesFiltradas[i];
+
+        contenedor.innerHTML +=
+            "<div class='tab-item' onclick='mostrarActividad(" + actividad.id + ")'>" +
+                "<img src='" + actividad.imagen + "' alt='" + actividad.nombre + "'>" +
+                "<span>" + actividad.nombre + "</span>" +
+                "<button type='button' class='boton-eliminar-actividad' onclick='eliminarActividad(event, " + actividad.id + ")'>Eliminar</button>" +
+            "</div>";
+    }
+}
+
+
+function mostrarActividad(idActividad) {
+    let actividadEncontrada = null;
+
+    for (let i = 0; i < actividades.length; i++) {
+        if (actividades[i].id === idActividad) {
+            actividadEncontrada = actividades[i];
+        }
+    }
+
+    if (actividadEncontrada === null) {
+        return;
+    }
+
+    const imagen = document.getElementById("main-card-img");
+    const titulo = document.getElementById("main-card-title");
+    const descripcion = document.getElementById("main-card-desc");
+    const nivel = document.getElementById("nivelActividad");
+    const categoria = document.getElementById("categoriaActividad");
+
+    if (!imagen || !titulo || !descripcion) {
+        return;
+    }
+
+    imagen.style.opacity = 0;
+    titulo.style.opacity = 0;
+    descripcion.style.opacity = 0;
+
+    setTimeout(function () {
+        imagen.src = actividadEncontrada.imagen;
+        imagen.alt = actividadEncontrada.nombre;
+
+        titulo.innerHTML = actividadEncontrada.nombre;
+        descripcion.innerHTML = actividadEncontrada.descripcion + "<br><br>" + actividadEncontrada.detalle;
+
+        if (nivel) {
+            nivel.innerHTML = actividadEncontrada.nivel;
+        }
+
+        if (categoria) {
+            categoria.innerHTML = actividadEncontrada.categoria;
+        }
+
+        imagen.style.opacity = 1;
+        titulo.style.opacity = 1;
+        descripcion.style.opacity = 1;
+    }, 150);
+
+    const opciones = document.getElementsByClassName("tab-item");
+
+    for (let i = 0; i < opciones.length; i++) {
+        opciones[i].classList.remove("active");
+    }
+
+    for (let j = 0; j < actividadesFiltradas.length; j++) {
+        if (actividadesFiltradas[j].id === idActividad && opciones[j]) {
+            opciones[j].classList.add("active");
+        }
+    }
+}
+
+
+function filtrarActividades(categoria, boton) {
+    categoriaActual = categoria;
+
+    if (categoria === "Todas") {
+        actividadesFiltradas = actividades;
+    } else {
+        actividadesFiltradas = [];
+
+        for (let i = 0; i < actividades.length; i++) {
+            if (actividades[i].categoria === categoria) {
+                actividadesFiltradas.push(actividades[i]);
+            }
+        }
+    }
+
+    const botonesFiltro = document.getElementsByClassName("btn-filtro-actividad");
+
+    for (let j = 0; j < botonesFiltro.length; j++) {
+        botonesFiltro[j].classList.remove("activo");
+    }
+
+    if (boton) {
+        boton.classList.add("activo");
+    }
+
+    mostrarActividades();
+    mostrarPrimeraActividad();
+}
+
+
+function eliminarActividad(evento, idActividad) {
+    evento.stopPropagation();
+
+    let confirmar = confirm("¿Desea eliminar esta actividad de la vista?");
+
+    if (!confirmar) {
+        return;
+    }
+
+    let nuevasActividades = [];
+
+    for (let i = 0; i < actividades.length; i++) {
+        if (actividades[i].id !== idActividad) {
+            nuevasActividades.push(actividades[i]);
+        }
+    }
+
+    actividades = nuevasActividades;
+    aplicarFiltroActual();
+}
+
+
+function aplicarFiltroActual() {
+    if (categoriaActual === "Todas") {
+        actividadesFiltradas = actividades;
+    } else {
+        actividadesFiltradas = [];
+
+        for (let i = 0; i < actividades.length; i++) {
+            if (actividades[i].categoria === categoriaActual) {
+                actividadesFiltradas.push(actividades[i]);
+            }
+        }
+    }
+
+    mostrarActividades();
+    mostrarPrimeraActividad();
+}
+
+
+function mostrarPrimeraActividad() {
+    if (actividadesFiltradas.length > 0) {
+        mostrarActividad(actividadesFiltradas[0].id);
+    } else {
+        limpiarActividadPrincipal();
+    }
+}
+
+
+function limpiarActividadPrincipal() {
+    const imagen = document.getElementById("main-card-img");
+    const titulo = document.getElementById("main-card-title");
+    const descripcion = document.getElementById("main-card-desc");
+    const nivel = document.getElementById("nivelActividad");
+    const categoria = document.getElementById("categoriaActividad");
+
+    if (!imagen || !titulo || !descripcion) {
+        return;
+    }
+
+    imagen.removeAttribute("src");
+    imagen.alt = "Sin actividad";
+    titulo.innerHTML = "Sin actividades";
+    descripcion.innerHTML = "No hay actividades disponibles para mostrar.";
+
+    if (nivel) {
+        nivel.innerHTML = "Sin nivel";
+    }
+
+    if (categoria) {
+        categoria.innerHTML = "Sin categoría";
+    }
+}
