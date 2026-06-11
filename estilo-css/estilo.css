@@ -1075,7 +1075,7 @@ footer {
             rgba(0, 0, 0, 0.55),
             rgba(0, 0, 0, 0.25)
         ),
-        url("../imagenes/header/headerhorarios.jpg");
+        url("../imagenes/header/headerHorarios.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1336,7 +1336,7 @@ footer {
             rgba(0, 0, 0, 0.55),
             rgba(0, 0, 0, 0.25)
         ),
-        url("/imagenes/header/localgym.png");
+        url("../imagenes/header/localgym.png");
     background-size: cover;
     background-position: center;
     display: flex;
