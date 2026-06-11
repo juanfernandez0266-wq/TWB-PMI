@@ -96,6 +96,15 @@ function validarFechaNacimiento() {
 
     marcarValido(fechaNacimiento);
     return true;
+
+    let fecha_actual = new Date();
+    let fechaNacimiento = new Date(valor); 
+
+    let edad = fecha_actual.getFullYear() - fechaNacimiento.getFullYear();
+    
+    if (edad < 16) {
+    marcarInvalido(document.getElementById("fechaNacimiento"));
+    return false;
 }
 
 
