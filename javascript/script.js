@@ -78,33 +78,19 @@ function validarNombre() {
 }
 
 
-function validarFechaNacimiento() {
-    let inputFecha = document.getElementById("fechaNacimiento");
-    let valor = inputFecha.value;
-
+function validarFechaNacimiento() { 
+    let fechaNacimiento = document.getElementById("fechaNacimiento");
+    let valor = fechaNacimiento.value;
     if (valor === "") {
-        marcarInvalido(inputFecha);
+        marcarInvalido(fechaNacimiento);
         return false;
-    }
-
+    } 
     let fechaIngresada = new Date(valor);
-
-    if (isNaN(fechaIngresada.getTime())) {
-        marcarInvalido(inputFecha);
-        return false;
-    }
-
-    // Calculamos solo por año
-    let hoy = new Date();
-    let edad = hoy.getFullYear() - fechaIngresada.getFullYear();
-    
-    // Si la diferencia es menor a 16 años, rechazamos
-    if (edad < 16) {
-        marcarInvalido(inputFecha);
-        return false;
-    }
-
-    marcarValido(inputFecha);
+    if (isNaN(fechaIngresada.getTime())){ 
+        marcarInvalido(fechaNacimiento); 
+        return false; 
+     } 
+    marcarValido(fechaNacimiento);
     return true;
 }
 
