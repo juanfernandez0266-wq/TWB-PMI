@@ -529,25 +529,84 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 /* =====================================================
-   ACTIVIDADES JSON - CARGAR, FILTRAR Y ELIMINAR
+    JS DE RAMIRO - CAMBIO DE CLASE DESTACADA
 ===================================================== */
 
+document.addEventListener("DOMContentLoaded", function () {
+    const mainImg = document.getElementById("main-card-img");
+    const mainTitle = document.getElementById("main-card-title");
+    const mainDesc = document.getElementById("main-card-desc");
+
+    const tabs = document.querySelectorAll(".tab-item");
+
+    if (!mainImg || !mainTitle || !mainDesc || tabs.length === 0) {
+        return;
+    }
+
+    tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+
+            if (tab.classList.contains("active")) {
+                return;
+            }
+
+            const tabActiva = document.querySelector(".tab-item.active");
+
+            if (tabActiva) {
+                tabActiva.classList.remove("active");
+            }
+
+            tab.classList.add("active");
+
+            const nuevoTitulo = tab.getAttribute("data-title");
+            const nuevaDescripcion = tab.getAttribute("data-desc");
+            const nuevaImagen = tab.getAttribute("data-img");
+
+            mainImg.style.opacity = 0;
+            mainTitle.style.opacity = 0;
+            mainDesc.style.opacity = 0;
+
+            setTimeout(function () {
+                mainImg.src = nuevaImagen;
+                mainTitle.innerText = nuevoTitulo;
+                mainDesc.innerText = nuevaDescripcion;
+
+                mainImg.style.opacity = 1;
+                mainTitle.style.opacity = 1;
+                mainDesc.style.opacity = 1;
+            }, 150);
+        });
+    });
+});
+
+
+
+
+
+/* =====================================================
+   ACTIVIDADES JSON - CARGAR, FILTRAR Y ELIMINAR
+===================================================== */
+/* VARIABLES GLOBALES PARA GUARDAR LAS ACTIVIDADES */
 let actividades = [];
 let actividadesFiltradas = [];
 let categoriaActual = "Todas";
 
+
+/*  Espera a que el html este completamente cargado para ejecutar el código */
 document.addEventListener("DOMContentLoaded", function () {
     const contenedorActividades = document.getElementById("contenedorActividades");
 
     if (!contenedorActividades) {
         return;
     }
-
+    /* Cuando esta todo cargado, llama a cargar las actividades desde el archivo JSON */
     cargarActividadesDesdeJson();
 });
 
 
 function cargarActividadesDesdeJson() {
+    /* Solicita el archivo JSON con las actividades, lo convierte a un objeto JavaScript y lo guarda en la variable global "actividades".
+     Luego muestra las actividades en la página. Si hay un error al cargar el archivo, muestra una alerta. */
     fetch("datos/actividades.json")
         .then(function (respuesta) {
             return respuesta.json();
@@ -564,22 +623,26 @@ function cargarActividadesDesdeJson() {
         });
 }
 
-
+/* Muestra todas las actividades que están en la variable "actividadesFiltradas" dentro del contenedor HTML.*/
 function mostrarActividades() {
     const contenedor = document.getElementById("contenedorActividades");
 
     if (!contenedor) {
         return;
     }
-
+    /* Borra cualquier contenido previo a ese contenedor para evitar duplicados.*/
     contenedor.innerHTML = "";
 
+    /* Si no hay actividades para mostrar, muestra un mensaje indicando que no hay actividades disponibles para esa categoría. */
     if (actividadesFiltradas.length === 0) {
         contenedor.innerHTML = "<p class='text-center text-muted'>No hay actividades disponibles para esta categoría.</p>";
         limpiarActividadPrincipal();
         return;
     }
-
+    /* Recorre la lista de actividades filtradas y crea un elemento HTML para cada una, agregándolos al contenedor. 
+    Cada elemento incluye una imagen, el nombre de la actividad y un botón para eliminarla de la vista. 
+    Al hacer clic en el elemento, se muestra la información detallada de esa actividad. */
+   
     for (let i = 0; i < actividadesFiltradas.length; i++) {
         const actividad = actividadesFiltradas[i];
 
@@ -592,10 +655,10 @@ function mostrarActividades() {
     }
 }
 
-
+/* Muestra la información detallada de una actividad específica en la sección principal de la página.*/
 function mostrarActividad(idActividad) {
     let actividadEncontrada = null;
-
+    /* Busca la actividad que coincida con el id que se pasa, cuando la encuentra, la guarda para luego mostrar sus detalles. */
     for (let i = 0; i < actividades.length; i++) {
         if (actividades[i].id === idActividad) {
             actividadEncontrada = actividades[i];
@@ -605,7 +668,7 @@ function mostrarActividad(idActividad) {
     if (actividadEncontrada === null) {
         return;
     }
-
+    /* Si lo encuentra, acutaliza la imagen, el titulo, la descripción, el nivel y la categoría de la actividad en la sección principal.*/
     const imagen = document.getElementById("main-card-img");
     const titulo = document.getElementById("main-card-title");
     const descripcion = document.getElementById("main-card-desc");
@@ -620,6 +683,7 @@ function mostrarActividad(idActividad) {
     titulo.style.opacity = 0;
     descripcion.style.opacity = 0;
 
+    /* Despues de un pequeño retraso, actualiza la informacion para que la actividad se muestre con un efecto de transición suave. */
     setTimeout(function () {
         imagen.src = actividadEncontrada.imagen;
         imagen.alt = actividadEncontrada.nombre;
@@ -653,24 +717,30 @@ function mostrarActividad(idActividad) {
     }
 }
 
-
+/* Filtra las actividades según la categoría seleccionada. Si se selecciona "Todas", muestra todas las actividades.*/
 function filtrarActividades(categoria, boton) {
     categoriaActual = categoria;
 
+    /* Si la categoría seleccionada es "Todas", asigna todas las actividades a la variable "actividadesFiltradas".*/
     if (categoria === "Todas") {
         actividadesFiltradas = actividades;
     } else {
         actividadesFiltradas = [];
-
+    
+    /*Si la cateogoría es diferente a "Todas", recorre la lista completa de actividades y agrega a "actividadesFiltradas" 
+    solo aquellas que coincidan con la categoría seleccionada. */
         for (let i = 0; i < actividades.length; i++) {
             if (actividades[i].categoria === categoria) {
                 actividadesFiltradas.push(actividades[i]);
             }
         }
     }
-
+   
+    /* Actualiza la clase "activo" en los botones de filtro para resaltar el botón seleccionado.
+     Luego muestra las actividades filtradas y la primera actividad de esa categoría. */
     const botonesFiltro = document.getElementsByClassName("btn-filtro-actividad");
-
+    
+    /* Botones de filtro de actividades, para que se resalte la categoria que elegimos, las otras no se resaltan.*/
     for (let j = 0; j < botonesFiltro.length; j++) {
         botonesFiltro[j].classList.remove("activo");
     }
@@ -684,6 +754,8 @@ function filtrarActividades(categoria, boton) {
 }
 
 
+/* Elimina una actividad de la vista al hacer clic en el botón "Eliminar" de esa actividad.
+    Recibe como parámetros el evento del clic y el id de la actividad a eliminar. */
 function eliminarActividad(evento, idActividad) {
     evento.stopPropagation();
 
@@ -695,7 +767,9 @@ function eliminarActividad(evento, idActividad) {
 
     let nuevasActividades = [];
 
+    /* Recorre la lista actividades, si es distinta a la que se quiere eliminar, la agrega a una nueva lista "nuevasActividades". */
     for (let i = 0; i < actividades.length; i++) {
+        /*Si el id de la actividad actual no coicide con el id de la actividad a eliminar, se agrega a la nueva lista "nuevasActividades".*/
         if (actividades[i].id !== idActividad) {
             nuevasActividades.push(actividades[i]);
         }
@@ -705,8 +779,11 @@ function eliminarActividad(evento, idActividad) {
     aplicarFiltroActual();
 }
 
+/* Aplica el filtro actual para actualizar la vista después de eliminar una actividad.
+    Si la categoría actual es "Todas", asigna todas las actividades a "actividadesFiltradas".*/
 
 function aplicarFiltroActual() {
+    
     if (categoriaActual === "Todas") {
         actividadesFiltradas = actividades;
     } else {
@@ -718,12 +795,12 @@ function aplicarFiltroActual() {
             }
         }
     }
-
+    /* Después de actualizar la lista de actividades filtradas, muestra las actividades y la primera actividad de esa categoría. */
     mostrarActividades();
     mostrarPrimeraActividad();
 }
 
-
+/* Muestra la primera actividad de la lista de actividades filtradas en la sección principal de la página.*/
 function mostrarPrimeraActividad() {
     if (actividadesFiltradas.length > 0) {
         mostrarActividad(actividadesFiltradas[0].id);
@@ -732,7 +809,9 @@ function mostrarPrimeraActividad() {
     }
 }
 
-
+/* Limpia la sección principal de la página cuando no hay actividades para mostrar, 
+restableciendo la imagen, el título, la descripción, el nivel y la categoría a valores 
+predeterminados que indican que no hay actividades disponibles. */
 function limpiarActividadPrincipal() {
     const imagen = document.getElementById("main-card-img");
     const titulo = document.getElementById("main-card-title");
