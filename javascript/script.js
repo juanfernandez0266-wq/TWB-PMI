@@ -106,6 +106,9 @@ function validarFechaNacimiento() {
     marcarInvalido(document.getElementById("fechaNacimiento"));
     return false;
 }
+    marcarValido(inputFecha);
+    return true;
+}
 
 
 function validarTelefono() {
