@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "nombre": "Natación",
+        "categoria": "Fuerza",
+        "nivel": "Bajo",
+        "imagen": "imagenes/actividades/natacion.png",
+        "descripcion": "Combina un excelente ejercicio aeróbico con el fortalecimiento muscular, todo ello en un entorno de bajo impacto que protege las articulaciones.",
+        "detalle": "Actividad recomendada para mejorar resistencia, coordinación y movilidad general."
+    },
+    {
+        "id": 2,
+        "nombre": "Spinning",
+        "categoria": "Cardio",
+        "nivel": "Medio",
+        "imagen": "imagenes/actividades/spinning.png",
+        "descripcion": "Ejercicio cardiovascular de bajo impacto que ofrece resultados rápidos. En sesiones de 45 a 60 minutos permite quemar calorías, tonificar el tren inferior y liberar estrés.",
+        "detalle": "Clase dinámica realizada en bicicleta fija, con intensidad adaptable según cada persona."
+    },
+    {
+        "id": 3,
+        "nombre": "Crossfit",
+        "categoria": "Fuerza",
+        "nivel": "Alto",
+        "imagen": "imagenes/actividades/crossfit.png",
+        "descripcion": "Programa de acondicionamiento físico de alta intensidad que combina fuerza, resistencia y ejercicios funcionales para mejorar el rendimiento general.",
+        "detalle": "Recomendado para quienes buscan una actividad exigente y completa."
+    },
+    {
+        "id": 4,
+        "nombre": "Fitness",
+        "categoria": "Cardio",
+        "nivel": "Medio",
+        "imagen": "imagenes/actividades/fitness.png",
+        "descripcion": "Actividad orientada a fortalecer el sistema cardiovascular, mejorar la masa muscular, controlar el peso corporal y reducir el estrés.",
+        "detalle": "Ideal para personas que buscan entrenar de forma constante y progresiva."
+    },
+    {
+        "id": 5,
+        "nombre": "Pases libres",
+        "categoria": "Libre",
+        "nivel": "Medio",
+        "imagen": "imagenes/actividades/pases-libres.png",
+        "descripcion": "Opción pensada para quienes buscan mayor libertad para entrenar, combinar actividades y organizar su rutina según disponibilidad.",
+        "detalle": "Permite organizar la rutina según disponibilidad y preferencias personales."
+    },
+    {
+        "id": 6,
+        "nombre": "Pilates",
+        "categoria": "Mente-cuerpo",
+        "nivel": "Bajo",
+        "imagen": "imagenes/actividades/pilates.jpg",
+        "descripcion": "La tonificación y fortalecimiento del core, la mejora significativa de la postura, el alivio de dolores de espalda, el aumento de la flexibilidad y la reducción del estrés gracias a la respiración consciente.",
+        "detalle": "Ayuda a mejorar postura, movilidad, respiración y control corporal."
+    }
+]
