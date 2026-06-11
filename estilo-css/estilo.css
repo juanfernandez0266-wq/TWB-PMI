@@ -692,7 +692,7 @@ footer {
             rgba(0, 0, 0, 0.55),
             rgba(0, 0, 0, 0.25)
         ),
-        url("/imagenes/header/chico.png");
+        url("../imagenes/header/headerInscripcion.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
