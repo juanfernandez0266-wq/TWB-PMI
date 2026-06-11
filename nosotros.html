@@ -1,1 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Nosotros - Gimnasio</title>
 
+    <!-- BOOTSTRAP 5.1.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- ICONOS BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- CSS PROPIO -->
+    <link rel="stylesheet" href="estilo-css/estilo.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER / MENÚ PRINCIPAL
+    ====================================================== -->
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+
+                <div class="row w-100 align-items-center">
+
+                    <div class="col-4 col-lg-2">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="imagenes/logo.png" alt="Logo del gimnasio">
+                        </a>
+                    </div>
+
+                    <div class="col-8 d-lg-none text-end">
+                        <button 
+                            class="navbar-toggler" 
+                            type="button" 
+                            data-bs-toggle="collapse" 
+                            data-bs-target="#menuPrincipal" 
+                            aria-controls="menuPrincipal" 
+                            aria-expanded="false" 
+                            aria-label="Abrir menú">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+
+                    <div class="col-12 col-lg-10">
+                        <div class="collapse navbar-collapse justify-content-end" id="menuPrincipal">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link enlace-menu" href="index.html#inicio">Principal</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link enlace-menu active" href="nosotros.html">Nosotros</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link enlace-menu" href="actividades.html">Actividades</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link enlace-menu" href="horarios.html">Horarios</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link enlace-menu" href="index.html#galeria">Galería</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link enlace-menu" href="inscripcion.html">Inscribirse</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link enlace-menu" href="contacto.html">Contáctenos</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- =====================================================
+         MAIN / CONTENIDO PRINCIPAL
+    ====================================================== -->
+    <main>
+
+        <!-- =================================================
+             SECCIÓN 1: PORTADA NOSOTROS
+        ================================================== -->
+        <section class="portada-nosotros">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <div class="col-12 col-lg-7">
+                        <div class="texto-portada-nosotros">
+                            <span>Nosotros</span>
+                            <h1>Un espacio para entrenar, aprender y compartir</h1>
+                            <p>
+                                El Complejo Deportivo Toribio Mendoza reúne distintas formas
+                                de actividad física en un mismo lugar, integrando entrenamiento,
+                                clases guiadas y propuestas acuáticas.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =================================================
+             SECCIÓN 2: IDENTIDAD DEL COMPLEJO
+        ================================================== -->
+        <section class="seccion-nosotros">
+            <div class="container">
+
+                <div class="row align-items-center g-5">
+
+                    <div class="col-12 col-lg-6">
+                        <div class="texto-nosotros">
+                            <span>Quiénes somos</span>
+                            <h2>Más que un gimnasio</h2>
+
+                            <p>
+                                El Complejo Deportivo Toribio Mendoza se presenta como una
+                                alternativa completa para quienes buscan incorporar el deporte
+                                y el movimiento a su rutina. Su propuesta combina espacios de
+                                musculación, actividades grupales y una zona acuática que permite
+                                trabajar distintas formas de entrenamiento.
+                            </p>
+
+                            <p>
+                                La variedad de actividades permite que cada persona encuentre una
+                                opción acorde a sus objetivos, ya sea mejorar su condición física,
+                                aprender una disciplina, mantenerse en movimiento o compartir una
+                                experiencia deportiva en comunidad.
+                            </p>
+
+                            <a href="actividades.html" class="btn-principal">
+                                Ver actividades
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-6">
+                        <div class="imagen-nosotros imagen-derecha">
+                            <img src="imagenes/nosotros/complejo.jpg" alt="Instalaciones del complejo deportivo">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <div class="separador-seccion"></div>
+
+
+        <!-- =================================================
+             SECCIÓN 3: ESPACIOS Y ACTIVIDADES
+        ================================================== -->
+        <section class="seccion-nosotros seccion-nosotros-clara">
+            <div class="container">
+
+                <div class="row align-items-center g-5">
+
+                    <div class="col-12 col-lg-6 order-2 order-lg-1">
+                        <div class="imagen-nosotros imagen-izquierda">
+                            <img src="imagenes/nosotros/pileta.jpg" alt="Zona acuática del complejo">
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-6 order-1 order-lg-2">
+                        <div class="texto-nosotros">
+                            <span>Espacios disponibles</span>
+                            <h2>Entrenamiento, pileta y clases</h2>
+
+                            <p>
+                                Una de las características más importantes del complejo es la
+                                diversidad de servicios. No se limita únicamente al entrenamiento
+                                de fuerza, sino que también incorpora propuestas acuáticas y clases
+                                dirigidas para distintos niveles.
+                            </p>
+
+                            <p>
+                                La presencia de piletas, espacios de musculación y actividades como
+                                natación, spinning, pilates, fitness y crossfit permite organizar
+                                rutinas más completas y adaptadas a diferentes necesidades.
+                            </p>
+
+                            <a href="horarios.html" class="btn-presentacion">
+                                Consultar horarios
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <div class="separador-seccion"></div>
+
+
+        <!-- =================================================
+             SECCIÓN 4: CARACTERÍSTICAS DEL COMPLEJO
+        ================================================== -->
+        <section class="seccion-caracteristicas">
+            <div class="container">
+
+                <div class="texto-seccion text-center">
+                    <h2>Lo que nos representa</h2>
+                    <span>Movimiento, constancia y variedad.</span>
+                    <p>
+                        El complejo busca ofrecer un entorno activo, accesible y flexible,
+                        acompañando a personas con distintos objetivos de entrenamiento.
+                    </p>
+                </div>
+
+                <div class="row g-4">
+
+                    <div class="col-12 col-md-4">
+                        <div class="tarjeta-nosotros">
+                            <i class="bi bi-water"></i>
+                            <h3>Zona acuática</h3>
+                            <p>
+                                Espacios pensados para natación, aprendizaje, recreación
+                                y actividades acuáticas de bajo impacto.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <div class="tarjeta-nosotros">
+                            <i class="bi bi-lightning-charge-fill"></i>
+                            <h3>Entrenamiento integral</h3>
+                            <p>
+                                Área de musculación, clases grupales y propuestas dinámicas
+                                para trabajar fuerza, resistencia y movilidad.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <div class="tarjeta-nosotros">
+                            <i class="bi bi-calendar-check"></i>
+                            <h3>Flexibilidad</h3>
+                            <p>
+                                Actividades y horarios pensados para que cada persona pueda
+                                adaptar el entrenamiento a su rutina diaria.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <div class="separador-seccion"></div>
+
+
+        <!-- =================================================
+             SECCIÓN 5: IMÁGENES DEL COMPLEJO
+        ================================================== -->
+        <section class="galeria-nosotros">
+            <div class="container">
+
+                <div class="row align-items-center g-4">
+
+                    <div class="col-12 col-lg-5">
+                        <div class="texto-nosotros">
+                            <span>Nuestro espacio</span>
+                            <h2>Un lugar para hacer del deporte una rutina</h2>
+
+                            <p>
+                                Cada sector del complejo está orientado a brindar distintas
+                                posibilidades de movimiento. El objetivo es que las personas
+                                puedan entrenar, aprender y sostener hábitos saludables en un
+                                espacio cercano y activo.
+                            </p>
+
+                            <a href="inscripcion.html" class="btn-principal">
+                                Inscribirme
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-7">
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <img src="imagenes/nosotros/gimnasio.jpg" class="foto-nosotros foto-alta" alt="Sala de entrenamiento">
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <img src="imagenes/nosotros/clase-grupal.jpg" class="foto-nosotros foto-baja" alt="Clase grupal en el gimnasio">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+        FOOTER / PIE DE PÁGINA
+    ====================================================== -->
+    <footer class="footer-gym mt-5">
+        <div class="container">
+            <div class="row">
+
+                <!-- Identidad del complejo -->
+                <div class="col-12 col-md-4 footer-bloque">
+                    <h3>Complejo Deportivo Toribio Mendoza</h3>
+
+                    <p>
+                        Un espacio pensado para entrenar, moverse y disfrutar del deporte
+                        en un ambiente activo, cercano y accesible.
+                    </p>
+
+                    <div class="footer-redes">
+                        <a href="https://www.instagram.com/toribiomendozacomplejodportivo/?hl=es" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+
+                        <a href="https://www.facebook.com/complejodeportivo.toribiomendoza/?locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+
+                        <a href="https://www.youtube.com/@toribiomendoza5914" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Enlaces rápidos -->
+                <div class="col-12 col-md-2 footer-bloque">
+                    <h4>Menú</h4>
+                    <ul>
+                        <li><a href="index.html#inicio">Inicio</a></li>
+                        <li><a href="actividades.html">Actividades</a></li>
+                        <li><a href="horarios.html">Horarios</a></li>
+                        <li><a href="inscripcion.html">Inscripción</a></li>
+                    </ul>
+                </div>
+
+                <!-- Actividades -->
+                <div class="col-12 col-md-3 footer-bloque">
+                    <h4>Actividades</h4>
+                    <ul>
+                        <li>Natación</li>
+                        <li>Crossfit</li>
+                        <li>Spinning</li>
+                        <li>Pilates</li>
+                        <li>Fitness</li>
+                        <li>Pases libres</li>
+                    </ul>
+                </div>
+
+                <!-- Contacto -->
+                <div class="col-12 col-md-3 footer-bloque">
+                    <h4>Contacto</h4>
+
+                    <p>
+                        <i class="bi bi-geo-alt-fill"></i>
+                        Pringles 530, San Luis
+                    </p>
+
+                    <p>
+                        Consultas e inscripciones disponibles desde la página.
+                    </p>
+
+                    <a class="footer-mapa" href="https://www.google.com/maps/dir//Complejo+Deportivo+Toribio+Mendoza,+Pringles+530,+D5700+San+Luis/@-33.2919058,-66.3200235,3470m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x95d43eab1c7a9341:0xb46327c5aa29217d!2m2!1d-66.3310254!2d-33.3016424?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-map"></i>
+                        Cómo llegar
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="footer-linea"></div>
+
+            <div class="footer-copy">
+                <p>
+                    © 2026 Complejo Deportivo Toribio Mendoza. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- =====================================================
+         BOTÓN VOLVER AL INICIO
+    ====================================================== -->
+    <a href="#" class="boton-volver-inicio" aria-label="Volver arriba">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+
+    <!-- =====================================================
+         JAVASCRIPT PROPIO
+    ====================================================== -->
+    <script src="javascript/script.js"></script>
+
+    <!-- =====================================================
+         SCRIPTS / BOOTSTRAP JS
+    ====================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
