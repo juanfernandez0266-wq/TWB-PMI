@@ -1103,7 +1103,7 @@ footer {
             rgba(0, 0, 0, 0.55),
             rgba(0, 0, 0, 0.25)
         ),
-        url("../imágenes/header/headerHorarios.jpg");
+        url("../imagenes/header/headerInscripcion.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
