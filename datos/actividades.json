@@ -1,12 +1,6 @@
 [
     {
-        "id": 1,
-        "nombre": "Natación",
-        "categoria": "Agua",
-        "nivel": "Bajo",
-        "imagen": "imagenes/galeria/natacion.jpg",
-        "descripcion": "Combina un excelente ejercicio aeróbico con el fortalecimiento muscular, todo ello en un entorno de bajo impacto que protege las articulaciones.",
-        "detalle": "Actividad recomendada para mejorar resistencia, coordinación y movilidad general."
+       
     },
     {
         "id": 2,
