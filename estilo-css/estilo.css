@@ -692,7 +692,7 @@ footer {
             rgba(0, 0, 0, 0.55),
             rgba(0, 0, 0, 0.25)
         ),
-        url("../imagenes/header/headerInscripcion.jpg");
+        url("/imagenes/header/chico.png");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -935,35 +935,6 @@ footer {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* =====================================================
    FOOTER / PIE DE PÁGINA
 ====================================================== */
@@ -1103,7 +1074,7 @@ footer {
             rgba(0, 0, 0, 0.55),
             rgba(0, 0, 0, 0.25)
         ),
-        url("../imagenes/header/headerInscripcion.jpg");
+        url("/imagenes/header/chica.png");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1364,7 +1335,7 @@ footer {
             rgba(0, 0, 0, 0.55),
             rgba(0, 0, 0, 0.25)
         ),
-        url("../imagenes/header/localgym.png");
+        url("/imagenes/header/localgym.png");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1500,5 +1471,1122 @@ footer {
     .section-contacto {
         padding-top: 40px;
         padding-bottom: 40px;
+    }
+}
+
+
+/* =====================================================
+   ACTIVIDADES - STYLE DE RAMIRO
+===================================================== */
+/* PORTADA DE ACTIVIDADES */
+
+.portada-actividades {
+    min-height: 520px;
+    padding: 170px 0 90px 0;
+    background:
+        linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.82),
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.25)
+        ),
+        url("../imagenes/actividades/gente.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.texto-portada-actividades {
+    color: var(--color-blanco);
+}
+
+.texto-portada-actividades span {
+    display: inline-block;
+    color: var(--color-dorado);
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+.texto-portada-actividades h1 {
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+}
+
+.texto-portada-actividades p {
+    font-size: 20px;
+    line-height: 1.7;
+    max-width: 650px;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.actividades-bienvenida {
+    background-color: var(--color-fondo);
+    padding: 70px 0;
+}
+
+.seccion-bienvenida {
+    background: linear-gradient(135deg, #111111, #222222);
+    color: var(--color-blanco);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.3);
+}
+
+.seccion-bienvenida h1 {
+    letter-spacing: 1px;
+}
+
+.seccion-bienvenida .text-muted {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.seccion-bienvenida .btn-warning {
+    font-weight: 700;
+}
+
+
+/* SECCIÓN DE CLASES */
+
+.clases-section {
+    background-color: var(--color-fondo);
+    padding: 70px 0;
+    text-align: center;
+}
+
+.clases-section .container {
+    max-width: 1000px;
+}
+
+.clases-section .section-title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 35px;
+    color: #212529;
+    margin-bottom: 40px;
+}
+
+
+/* TARJETA PRINCIPAL */
+
+.main-card {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-end;
+    text-align: left;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.main-card:hover {
+    border-color: var(--color-dorado);
+    transform: scale(1.01);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.25);
+}
+
+.card-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover;
+    z-index: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.card-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to top,
+        rgba(17, 17, 17, 0.9) 20%,
+        rgba(0, 0, 0, 0.2) 100%
+    );
+    z-index: 2;
+}
+
+.card-content {
+    position: relative;
+    z-index: 3;
+    padding: 40px;
+    width: 100%;
+}
+
+
+/* ETIQUETAS */
+
+.tags-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.tag-medio {
+    background-color: var(--color-dorado);
+}
+
+
+/* TEXTO DE TARJETA */
+
+.main-card .card-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: #e0e0e0;
+    max-width: 600px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    transition: opacity 0.2s ease-in-out;
+}
+
+
+/* BOTONES */
+
+.btn-horarios {
+    display: inline-block;
+    background-color: var(--color-dorado);
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-horarios:hover {
+    background-color: var(--color-dorado-oscuro);
+    color: #ffffff;
+}
+
+.btn-all-classes {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--color-dorado);
+    border: 2px solid var(--color-dorado);
+    padding: 14px 30px;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-all-classes:hover {
+    background-color: var(--color-dorado);
+    color: #ffffff;
+}
+
+.arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+    margin-left: 5px;
+}
+
+.btn-horarios:hover .arrow,
+.btn-all-classes:hover .arrow {
+    transform: translateX(5px);
+}
+
+
+/* PESTAÑAS DE ACTIVIDADES */
+
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.tab-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+.tab-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.tab-item span {
+    font-weight: 700;
+    color: #666666;
+    font-size: 15px;
+}
+
+.tab-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-color: rgba(212, 160, 7, 0.3);
+}
+
+.tab-item.active {
+    border-color: var(--color-dorado);
+    background-color: #ffffff;
+    box-shadow: 0 8px 25px rgba(212, 160, 7, 0.15);
+}
+
+.tab-item.active span {
+    color: var(--color-dorado);
+}
+
+
+/* ACTIVIDADES - RESPONSIVE */
+
+@media (max-width: 992px) {
+    .portada-actividades {
+        min-height: 470px;
+        padding: 150px 0 70px 0;
+    }
+
+    .texto-portada-actividades h1 {
+        font-size: 46px;
+    }
+
+    .texto-portada-actividades p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .portada-actividades {
+        min-height: 430px;
+        padding: 135px 0 60px 0;
+        text-align: center;
+    }
+
+    .texto-portada-actividades h1 {
+        font-size: 34px;
+    }
+
+    .texto-portada-actividades span {
+        font-size: 15px;
+        letter-spacing: 3px;
+    }
+
+    .texto-portada-actividades p {
+        font-size: 16px;
+    }
+}
+
+
+/* =====================================================
+   INDEX - PLANES
+===================================================== */
+
+.planes-index {
+    background-color: var(--color-blanco);
+    padding: 90px 0;
+}
+
+.planes-index .plan-card {
+    background-color: var(--color-blanco);
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    padding: 15px;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: visible;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.planes-index .plan-destacado {
+    border: 2px solid var(--color-dorado);
+    box-shadow: 0 8px 25px rgba(212, 160, 7, 0.1);
+}
+
+.planes-index .plan-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.planes-index .icon-contenedor {
+    width: 42px;
+    height: 42px;
+    background-color: #f1f3f5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.planes-index .plan-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-negro);
+}
+
+.planes-index .plan-subtitle {
+    font-size: 12px;
+}
+
+.planes-index .precio-contenedor {
+    margin-top: 25px;
+}
+
+.planes-index .precio-principal {
+    font-size: 40px;
+    font-weight: 800;
+    color: #212529;
+    margin: 0;
+}
+
+.planes-index .precio-principal span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #777777;
+}
+
+.planes-index .precio-detalle {
+    font-size: 13px;
+    color: #888888;
+    margin: 0;
+}
+
+.planes-index .divisor-plan {
+    border-color: #e0e0e0;
+    opacity: 1;
+    margin: 20px 0;
+}
+
+.planes-index .lista-beneficios {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.planes-index .lista-beneficios li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 14px;
+    font-size: 13.5px;
+    line-height: 1.4;
+    color: #495057;
+}
+
+.planes-index .lista-beneficios li.check::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-dorado);
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.planes-index .insignia-premium {
+    position: absolute;
+    top: -12px;
+    right: 25px;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.planes-index .insignia-premium.oro {
+    background-color: var(--color-dorado);
+    color: var(--color-blanco);
+}
+
+.planes-index .insignia-premium.gris {
+    background-color: #e9ecef;
+    color: #495057;
+    border: 1px solid #dee2e6;
+}
+
+.planes-index .btn-contratar {
+    background-color: transparent;
+    color: #212529;
+    border: 1px solid #ced4da;
+    padding: 12px 20px;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.planes-index .plan-destacado .btn-contratar {
+    background-color: var(--color-dorado);
+    color: var(--color-blanco);
+    border: none;
+}
+
+.planes-index .btn-contratar:hover {
+    background-color: #212529;
+    color: var(--color-blanco);
+    border-color: #212529;
+    transform: scale(1.02);
+}
+
+.planes-index .plan-destacado .btn-contratar:hover {
+    background-color: var(--color-dorado-oscuro);
+    color: var(--color-blanco);
+}
+
+.planes-index .arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.planes-index .btn-contratar:hover .arrow {
+    transform: translateX(4px);
+}
+
+
+/* INDEX - PLANES RESPONSIVE */
+
+@media (max-width: 992px) {
+    .planes-index {
+        padding: 75px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .planes-index {
+        padding: 60px 0;
+    }
+
+    .planes-index .precio-principal {
+        font-size: 32px;
+    }
+
+    .planes-index .btn-contratar {
+        width: 100%;
+    }
+}
+
+
+
+/* =====================================================
+   RESPONSIVE ESPECÍFICO PARA CELULARES - 430px x 932px
+===================================================== */
+
+@media (max-width: 430px) {
+
+    /* ===============================
+       AJUSTES GENERALES
+    =============================== */
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .texto-seccion {
+        margin-bottom: 35px;
+    }
+
+    .texto-seccion h2,
+    .texto-seccion h3 {
+        font-size: 26px;
+        line-height: 1.2;
+    }
+
+    .texto-seccion span {
+        font-size: 15px;
+    }
+
+    .texto-seccion p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+
+    /* ===============================
+       MENÚ PRINCIPAL
+    =============================== */
+
+    .navbar {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .navbar-brand img {
+        width: 125px;
+    }
+
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.90);
+        padding: 15px;
+        margin-top: 12px;
+        border-radius: 10px;
+    }
+
+    .navbar-nav {
+        gap: 4px;
+    }
+
+    .enlace-menu {
+        padding: 9px 14px !important;
+        font-size: 14px;
+    }
+
+
+    /* ===============================
+       INDEX - PORTADA
+    =============================== */
+
+    .portada {
+        height: 100vh;
+    }
+
+    .contenido-portada {
+        bottom: 13%;
+    }
+
+    .subtitulo {
+        font-size: 12px;
+        letter-spacing: 3px;
+        margin-bottom: 12px;
+    }
+
+    .contenido-portada h1 {
+        font-size: 34px;
+        line-height: 1.1;
+        margin-bottom: 15px;
+    }
+
+    .contenido-portada p {
+        font-size: 15px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .btn-principal,
+    .btn-secundario {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+        margin-top: 10px;
+        padding: 11px 20px;
+        font-size: 14px;
+    }
+
+    .carousel-indicators {
+        margin-bottom: 18px;
+    }
+
+    .carousel-indicators [data-bs-target] {
+        width: 38px;
+        height: 4px;
+    }
+
+
+    /* ===============================
+       INDEX - PRESENTACIÓN
+    =============================== */
+
+    .presentacion {
+        padding: 60px 0 45px 0;
+        text-align: center;
+    }
+
+    .bloque-frase {
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+    .frase-linea {
+        font-size: 25px;
+        padding: 11px 15px;
+        letter-spacing: 1px;
+        line-height: 1.15;
+        box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.12);
+    }
+
+    .frase-linea-1,
+    .frase-linea-2 {
+        margin-left: 0;
+    }
+
+    .texto-presentacion {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    .imagen-presentacion {
+        max-height: 360px;
+        margin-top: 28px;
+    }
+
+
+    /* ===============================
+       INDEX - VIDEO
+    =============================== */
+
+    .videos-inicio {
+        padding: 55px 0;
+    }
+
+    .contenedor-video {
+        height: 215px;
+        border-radius: 16px;
+        margin-bottom: 28px;
+    }
+
+    .texto-video {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .texto-video span {
+        font-size: 15px;
+    }
+
+    .texto-video h2 {
+        font-size: 26px;
+        line-height: 1.2;
+    }
+
+    .texto-video p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .boton-video {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    /* ===============================
+       INDEX - GALERÍA
+    =============================== */
+
+    .galeria {
+        padding: 30px 0;
+    }
+
+    .galeria-contenido {
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+    }
+
+    .img-galeria,
+    .card-img-top {
+        height: 230px;
+    }
+
+
+    /* ===============================
+       INDEX - PLANES
+    =============================== */
+
+    .planes-index {
+        padding: 55px 0;
+    }
+
+    .planes-index .plan-card {
+        padding: 12px;
+        margin-bottom: 20px;
+    }
+
+    .planes-index .card-body {
+        padding: 28px 20px;
+    }
+
+    .planes-index .plan-name {
+        font-size: 17px;
+    }
+
+    .planes-index .plan-subtitle {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .planes-index .precio-principal {
+        font-size: 31px;
+    }
+
+    .planes-index .lista-beneficios li {
+        font-size: 13px;
+        line-height: 1.45;
+    }
+
+    .planes-index .btn-contratar {
+        width: 100%;
+    }
+
+
+    /* ===============================
+       INSCRIPCIÓN
+    =============================== */
+
+    .portada-inscripcion {
+        min-height: 410px;
+        padding: 125px 0 55px 0;
+        text-align: center;
+    }
+
+    .texto-portada-inscripcion h1 {
+        font-size: 31px;
+        line-height: 1.15;
+    }
+
+    .texto-portada-inscripcion span {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+
+    .texto-portada-inscripcion p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .seccion-inscripcion {
+        padding: 50px 0;
+    }
+
+    .tarjeta-inscripcion .card-body {
+        padding: 25px 18px;
+    }
+
+    .tarjeta-inscripcion .texto-seccion h2 {
+        font-size: 25px;
+    }
+
+    .tarjeta-inscripcion .form-control {
+        font-size: 15px;
+        padding: 12px 14px;
+    }
+
+    .opciones-actividades {
+        padding: 15px;
+    }
+
+
+    /* ===============================
+       HORARIOS
+    =============================== */
+
+    .portada-horarios {
+        min-height: 410px;
+        padding: 125px 0 55px 0;
+        text-align: center;
+    }
+
+    .texto-portada-horarios h1 {
+        font-size: 31px;
+        line-height: 1.15;
+    }
+
+    .texto-portada-horarios span {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+
+    .texto-portada-horarios p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .seccion-horarios {
+        padding: 50px 0;
+    }
+
+    .seccion-horarios .texto-seccion h3 {
+        font-size: 25px;
+    }
+
+    .seccion-horarios .texto-seccion p,
+    .seccion-horarios .texto-seccion span {
+        font-size: 15px;
+    }
+
+    .botones-vista-horarios .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .seccion-horarios .table {
+        font-size: 13px;
+    }
+
+    .contenedor-carrusel-horarios {
+        padding: 6px;
+    }
+
+
+    /* ===============================
+       CONTACTO
+    =============================== */
+
+    .hero-contacto {
+        min-height: 410px;
+        padding: 125px 0 55px 0;
+        text-align: center;
+    }
+
+    .texto-hero-contacto h1 {
+        font-size: 31px;
+        line-height: 1.15;
+    }
+
+    .texto-hero-contacto span {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+
+    .texto-hero-contacto p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .section-contacto {
+        padding-top: 35px;
+        padding-bottom: 35px;
+    }
+
+    .section-contacto iframe {
+        height: 320px !important;
+        margin-top: 25px;
+    }
+
+    .card-contacto {
+        padding: 20px;
+    }
+
+    .info-link {
+        font-size: 15px;
+        word-break: break-word;
+    }
+
+
+    /* ===============================
+       ACTIVIDADES
+    =============================== */
+
+    .portada-actividades {
+        min-height: 410px;
+        padding: 125px 0 55px 0;
+        text-align: center;
+    }
+
+    .texto-portada-actividades h1 {
+        font-size: 31px;
+        line-height: 1.15;
+    }
+
+    .texto-portada-actividades span {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+
+    .texto-portada-actividades p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .actividades-bienvenida {
+        padding: 50px 0;
+    }
+
+    .seccion-bienvenida {
+        padding: 30px 18px !important;
+    }
+
+    .seccion-bienvenida h1 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .seccion-bienvenida .lead {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .clases-section {
+        padding: 50px 0;
+    }
+
+    .clases-section .section-title {
+        font-size: 25px;
+    }
+
+    .main-card {
+        height: 430px;
+    }
+
+    .card-content {
+        padding: 24px 20px;
+    }
+
+    .main-card .card-title {
+        font-size: 30px;
+    }
+
+    .card-description {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .tags-container {
+        flex-wrap: wrap;
+    }
+
+    .tab-item {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .btn-horarios,
+    .btn-all-classes {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    /* ===============================
+       FOOTER
+    =============================== */
+
+    .footer-gym {
+        text-align: center;
+        padding: 38px 0 18px 0;
+    }
+
+    .footer-bloque {
+        margin-bottom: 28px;
+    }
+
+    .footer-redes a {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .footer-mapa {
+        justify-content: center;
+    }
+}
+
+
+/* =====================================================
+   ACTIVIDADES - FILTROS Y JSON
+===================================================== */
+
+.filtros-actividades {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.btn-filtro-actividad {
+    background-color: var(--color-blanco);
+    color: var(--color-negro);
+    border: 2px solid var(--color-dorado);
+    border-radius: 25px;
+    padding: 9px 20px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-filtro-actividad:hover,
+.btn-filtro-actividad.activo {
+    background-color: var(--color-dorado);
+    color: var(--color-negro);
+}
+
+.boton-eliminar-actividad {
+    background-color: #dc3545;
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: auto;
+    transition: all 0.3s ease;
+}
+
+.boton-eliminar-actividad:hover {
+    background-color: #b02a37;
+}
+
+@media (max-width: 430px) {
+    .filtros-actividades {
+        gap: 8px;
+    }
+
+    .btn-filtro-actividad {
+        width: 100%;
+        padding: 10px 16px;
+    }
+
+    .boton-eliminar-actividad {
+        margin-left: 0;
+        margin-top: 8px;
+        width: 100%;
     }
 }
