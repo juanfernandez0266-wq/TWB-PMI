@@ -1491,7 +1491,7 @@ footer {
             rgba(0, 0, 0, 0.55),
             rgba(0, 0, 0, 0.25)
         ),
-        url("../imagenes/actividades/Gente.png");
+        url("../imagenes/galeria/Gente.png");
     background-size: cover;
     background-position: center;
     display: flex;
