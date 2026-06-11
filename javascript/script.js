@@ -79,37 +79,34 @@ function validarNombre() {
 
 
 function validarFechaNacimiento() {
-    let fechaNacimiento = document.getElementById("fechaNacimiento");
-    let valor = fechaNacimiento.value;
+    let inputFecha = document.getElementById("fechaNacimiento");
+    let valor = inputFecha.value;
 
     if (valor === "") {
-        marcarInvalido(fechaNacimiento);
+        marcarInvalido(inputFecha);
         return false;
     }
 
     let fechaIngresada = new Date(valor);
 
     if (isNaN(fechaIngresada.getTime())) {
-        marcarInvalido(fechaNacimiento);
+        marcarInvalido(inputFecha);
         return false;
     }
 
-    marcarValido(fechaNacimiento);
-    return true;
-
-    let fecha_actual = new Date();
-    let fechaNacimiento = new Date(valor); 
-
-    let edad = fecha_actual.getFullYear() - fechaNacimiento.getFullYear();
+    // Calculamos solo por año
+    let hoy = new Date();
+    let edad = hoy.getFullYear() - fechaIngresada.getFullYear();
     
+    // Si la diferencia es menor a 16 años, rechazamos
     if (edad < 16) {
-    marcarInvalido(document.getElementById("fechaNacimiento"));
-    return false;
-}
+        marcarInvalido(inputFecha);
+        return false;
+    }
+
     marcarValido(inputFecha);
     return true;
 }
-
 
 function validarTelefono() {
     let telefono = document.getElementById("telefono");
