@@ -1,8 +1,7 @@
 [
     {
        "id": 1, 
-        "nombre": 
-        "Natación",
+        "nombre": "Natación",
         "categoria": "Agua", 
         "nivel": "Bajo", 
         "imagen": "imagenes/galeria/natacion.jpg", 
